@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
+namespace ProiectPAW
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
+            InitializeComponent();
+            btnExit.Select();
+        }
+
+        private void txtUser_Enter(object sender, EventArgs e)
+        {
+            txtUser.SelectionStart = 0;
+            if(txtUser.Text == "Username")
+            {
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+            if(txtUser.Text == "")
+            {
+                txtUser.Text = "Username";
+                txtUser.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+            if(txtPass.Text == "Password")
+            {
+                txtPass.Text = "";
+                txtPass.PasswordChar = '*';
+                txtPass.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            if(txtPass.Text == "")
+            {
+                txtPass.PasswordChar = '\0';
+                txtPass.Text = "Password";
+                txtPass.ForeColor = Color.Silver;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (dbQuery.Login(txtUser.Text, txtPass.Text))
+            {
+                User loggedIn = dbQuery.loggedIn(txtUser.Text);
+                var main = new MainMenu(loggedIn);
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username and/or password invalid.", "Check credentials!");
+            }
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+    }
+}
