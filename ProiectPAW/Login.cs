@@ -13,6 +13,7 @@ namespace ProiectPAW
 {
     public partial class Login : Form
     {
+        public string username { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -65,16 +66,23 @@ namespace ProiectPAW
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (dbQuery.Login(txtUser.Text, txtPass.Text))
+            string testResult = dbQuery.checkDb();
+
+            if (testResult != "true")
             {
-                User loggedIn = dbQuery.loggedIn(txtUser.Text);
-                var main = new MainMenu(loggedIn);
-                main.Show();
-                this.Hide();
+                MessageBox.Show("Connection to database failed with the following error:\n\n" + testResult + "\n\nContact your administrator if problems persist.", "Connection failure");
             }
             else
             {
-                MessageBox.Show("Username and/or password invalid.", "Check credentials!");
+                if (dbQuery.Login(txtUser.Text, txtPass.Text))
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username and/or password invalid.", "Check credentials!");
+                }
             }
         }
 

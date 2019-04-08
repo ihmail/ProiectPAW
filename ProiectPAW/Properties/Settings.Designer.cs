@@ -22,5 +22,77 @@ namespace ProiectPAW.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sql7.freemysqlhosting.net")]
+        public string dbHostname {
+            get {
+                return ((string)(this["dbHostname"]));
+            }
+            set {
+                this["dbHostname"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
+        public string dbPort {
+            get {
+                return ((string)(this["dbPort"]));
+            }
+            set {
+                this["dbPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sql7287025")]
+        public string dbDatabase {
+            get {
+                return ((string)(this["dbDatabase"]));
+            }
+            set {
+                this["dbDatabase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sql7287025")]
+        public string dbUsername {
+            get {
+                return ((string)(this["dbUsername"]));
+            }
+            set {
+                this["dbUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DEtyr9egBg")]
+        public string dbPassword {
+            get {
+                return ((string)(this["dbPassword"]));
+            }
+            set {
+                this["dbPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("nu merge")]
+        public string test {
+            get {
+                return ((string)(this["test"]));
+            }
+            set {
+                this["test"] = value;
+            }
+        }
     }
 }

@@ -10,11 +10,59 @@ namespace ProiectPAW
 {
     public static class dbQuery
     {
-        static string connString = "Server=sql7.freemysqlhosting.net;Port=3306;Database=sql7287025;Uid=sql7287025;password=DEtyr9egBg;";
+
+        public static string hostname = Properties.Settings.Default.dbHostname;
+        public static string port = Properties.Settings.Default.dbPort;
+        public static string database = Properties.Settings.Default.dbDatabase;
+        public static string username = Properties.Settings.Default.dbUsername;
+        public static string password = Properties.Settings.Default.dbPassword;
+
+        private static string connString()
+        {
+            return "Server="+hostname+";Port="+port+";Database="+database+";Uid="+username+";password="+password+";";
+        }
+
+        private static string connString(string hostname, string port,  string database, string username, string password)
+        {
+            return "Server=" + hostname + ";Port=" + port + ";Database=" + database + ";Uid=" + username + ";password=" + password + ";";
+        }
+
+        public static string checkDb()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connString()))
+                {
+                    conn.Open();
+                    return "true";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
+        internal static string checkNewDbConnection(string hostname, string port,  string database, string username, string password)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connString(hostname, port, database, username, password)))
+                {
+                    conn.Open();
+                    return "true";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+        }
+
         public static bool Login(string user, string pass)
         {
             bool isValid = false;
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connString());
             MySqlCommand command = new MySqlCommand("select username, password from users where username=@user;", conn);
             command.Parameters.AddWithValue("user", user);
             conn.Open();
@@ -36,7 +84,7 @@ namespace ProiectPAW
 
         public static User loggedIn(string user)
         {
-            MySqlConnection conn = new MySqlConnection(connString);
+            MySqlConnection conn = new MySqlConnection(connString());
             MySqlCommand command = new MySqlCommand("select username, first_name, last_name, specialization, job_title, type from users where username=@user;", conn);
             command.Parameters.AddWithValue("user", user);
             conn.Open();

@@ -1,7 +1,24 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ProiectPAW.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dbHostname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sql7.freemysqlhosting.net</Value>
+    </Setting>
+    <Setting Name="dbPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="dbDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sql7287025</Value>
+    </Setting>
+    <Setting Name="dbUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sql7287025</Value>
+    </Setting>
+    <Setting Name="dbPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DEtyr9egBg</Value>
+    </Setting>
+    <Setting Name="test" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nu merge</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

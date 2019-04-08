@@ -15,7 +15,12 @@ namespace ProiectPAW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Login login = new Login();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                User currentUser = dbQuery.loggedIn(login.username);
+                Application.Run(new MainMenu(currentUser));
+            }
         }
     }
 }
