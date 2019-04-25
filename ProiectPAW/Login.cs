@@ -93,5 +93,29 @@ namespace ProiectPAW
                 btnLogin.PerformClick();
             }
         }
+
+        private void btnReqAccess_MouseEnter(object sender, EventArgs e)
+        {
+            btnReqAccess.ForeColor = Color.Red;
+            btnReqAccess.Font = new Font(btnReqAccess.Font, FontStyle.Underline);
+        }
+
+        private void btnReqAccess_MouseLeave(object sender, EventArgs e)
+        {
+            btnReqAccess.ForeColor = Color.Silver;
+            btnReqAccess.Font = new Font(btnReqAccess.Font, FontStyle.Regular);
+        }
+
+        private void btnForgotPass_MouseEnter(object sender, EventArgs e)
+        {
+            btnForgotPass.ForeColor = Color.Red;
+            btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Underline); 
+        }
+
+        private void btnForgotPass_MouseLeave(object sender, EventArgs e)
+        {
+            btnForgotPass.ForeColor = Color.Silver;
+            btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Regular);
+        }
     }
 }
