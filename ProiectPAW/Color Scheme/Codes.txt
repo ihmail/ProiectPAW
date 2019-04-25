@@ -1,0 +1,2 @@
+Background: 245; 247; 250
+Buttons/ETC: 239; 63; 74

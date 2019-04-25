@@ -96,7 +96,7 @@ namespace ProiectPAW
 
         private void btnReqAccess_MouseEnter(object sender, EventArgs e)
         {
-            btnReqAccess.ForeColor = Color.Red;
+            btnReqAccess.ForeColor = Color.FromArgb(239, 63, 74);
             btnReqAccess.Font = new Font(btnReqAccess.Font, FontStyle.Underline);
         }
 
@@ -108,7 +108,7 @@ namespace ProiectPAW
 
         private void btnForgotPass_MouseEnter(object sender, EventArgs e)
         {
-            btnForgotPass.ForeColor = Color.Red;
+            btnForgotPass.ForeColor = Color.FromArgb(239, 63, 74);
             btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Underline); 
         }
 
@@ -116,6 +116,11 @@ namespace ProiectPAW
         {
             btnForgotPass.ForeColor = Color.Silver;
             btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Regular);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

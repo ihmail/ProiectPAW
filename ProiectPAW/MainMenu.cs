@@ -18,10 +18,10 @@ namespace ProiectPAW
         {
             InitializeComponent();
             currentUser = user;
-            //if(currentUser.type != "admin")
-            //{
-            //    tlAdmin.Visible = false;
-            //}
+            if (currentUser.type != "admin")
+            {
+                tsAdmin.Visible = false;
+            }
             txtHostname.Text = dbQuery.hostname;
         }
 
@@ -36,7 +36,7 @@ namespace ProiectPAW
             dbSettings.ShowDialog();
         }
 
-        //Button for testinjg purposes
+        //Button for testing purposes
         private void test_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Properties.Settings.Default.test);

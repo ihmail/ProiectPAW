@@ -41,7 +41,8 @@
             // 
             // txtUser
             // 
-            this.txtUser.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtUser.BackColor = System.Drawing.Color.White;
+            this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(178)))), ((int)(((byte)(189)))));
             this.txtUser.Location = new System.Drawing.Point(48, 54);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(178, 20);
@@ -52,7 +53,8 @@
             // 
             // txtPass
             // 
-            this.txtPass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPass.BackColor = System.Drawing.Color.White;
+            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(178)))), ((int)(((byte)(189)))));
             this.txtPass.Location = new System.Drawing.Point(48, 80);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(178, 20);
@@ -63,7 +65,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Red;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(48, 120);
@@ -76,7 +78,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Red;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(48, 161);
@@ -89,7 +91,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(63)))), ((int)(((byte)(74)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(50, 0);
             this.panel1.Name = "panel1";
@@ -109,7 +111,7 @@
             // btnReqAccess
             // 
             this.btnReqAccess.AutoSize = true;
-            this.btnReqAccess.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnReqAccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(178)))), ((int)(((byte)(189)))));
             this.btnReqAccess.Location = new System.Drawing.Point(93, 209);
             this.btnReqAccess.Name = "btnReqAccess";
             this.btnReqAccess.Size = new System.Drawing.Size(84, 13);
@@ -121,7 +123,7 @@
             // btnForgotPass
             // 
             this.btnForgotPass.AutoSize = true;
-            this.btnForgotPass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnForgotPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(178)))), ((int)(((byte)(189)))));
             this.btnForgotPass.Location = new System.Drawing.Point(93, 233);
             this.btnForgotPass.Name = "btnForgotPass";
             this.btnForgotPass.Size = new System.Drawing.Size(86, 13);
@@ -134,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(275, 255);
             this.Controls.Add(this.btnForgotPass);
             this.Controls.Add(this.btnReqAccess);
@@ -147,6 +149,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
