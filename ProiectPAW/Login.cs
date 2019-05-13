@@ -76,6 +76,7 @@ namespace ProiectPAW
             {
                 if (dbQuery.Login(txtUser.Text, txtPass.Text))
                 {
+                    username = txtUser.Text;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -116,11 +117,6 @@ namespace ProiectPAW
         {
             btnForgotPass.ForeColor = Color.Silver;
             btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Regular);
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

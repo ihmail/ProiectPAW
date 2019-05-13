@@ -20,9 +20,13 @@ namespace ProiectPAW
             currentUser = user;
             if (currentUser.type != "admin")
             {
+                btnDbSettings.Visible = false;
+                btnUserManagement.Visible = false;
                 tsAdmin.Visible = false;
             }
-            txtHostname.Text = dbQuery.hostname;
+            lblPopName.Text = currentUser.FirstName + " " + currentUser.LastName;
+            lblPopSpec.Text = currentUser.specialization;
+            lblPopTitle.Text = currentUser.JobTitle;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +44,31 @@ namespace ProiectPAW
         private void test_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Properties.Settings.Default.test);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            grMenu.Text = "Merge!";
+            //grMenu.Update();
+            dbSettingsForm dbSettings = new dbSettingsForm();
+            dbSettings.ShowDialog();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnUserManagement_Click(object sender, EventArgs e)
+        {
+            UserManagementForm userManagement = new UserManagementForm();
+            userManagement.ShowDialog();
         }
     }
 }

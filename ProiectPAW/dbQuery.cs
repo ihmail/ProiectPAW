@@ -101,8 +101,33 @@ namespace ProiectPAW
                 type = reader.GetString(5);
 
             }
+            reader.Close();
+            conn.Close();
             User current = new User(userName, firstname, lastname, spec, job, type);
             return current;
+        }
+
+        public static List<User> loadUsers()
+        {
+            List<User> _users = new List<User>();
+            MySqlConnection conn = new MySqlConnection(connString());
+            conn.Open();
+            string load = "select username, first_name, last_name, specialization, job_title, type from users;";
+            MySqlCommand command = new MySqlCommand(load, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    _users.Add(new User(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
+                }
+            }
+            finally
+            {
+                reader.Close();
+            }
+
+            return _users;
         }
 
     }
