@@ -112,22 +112,58 @@ namespace ProiectPAW
             List<User> _users = new List<User>();
             MySqlConnection conn = new MySqlConnection(connString());
             conn.Open();
-            string load = "select username, first_name, last_name, specialization, job_title, type from users;";
+            string load = "select id, username, first_name, last_name, specialization, job_title, type from users;";
             MySqlCommand command = new MySqlCommand(load, conn);
             MySqlDataReader reader = command.ExecuteReader();
             try
             {
                 while (reader.Read())
                 {
-                    _users.Add(new User(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5)));
+                    _users.Add(new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6)));
                 }
             }
             finally
             {
                 reader.Close();
             }
-
+            conn.Close();
             return _users;
+        }
+
+        public static void deleteUser(User user)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            conn.Open();
+            string delete = "delete from users where id="+user.id; //no need for sanitizing since the user id is never edited by the user
+            MySqlCommand command = new MySqlCommand(delete, conn);
+            command.ExecuteNonQuery();
+            conn.Clone();
+        }
+        
+        public static void editUser(User user)
+        {
+            string editUser = "update users set first_name=@firstName, last_name=@lastName, specialization=@spec, job_title=@title, type=@newType where id=" + user.id;
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(editUser, conn);
+            command.Parameters.AddWithValue("firstName", user.FirstName);
+            command.Parameters.AddWithValue("lastName", user.LastName);
+            command.Parameters.AddWithValue("spec", user.specialization);
+            command.Parameters.AddWithValue("title", user.JobTitle);
+            command.Parameters.AddWithValue("newType", user.type);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void changePass(User user, string password)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string newPass = "update users set password=@pass where id=" + user.id;
+            MySqlCommand command = new MySqlCommand(newPass, conn);
+            command.Parameters.AddWithValue("pass", password);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
     }

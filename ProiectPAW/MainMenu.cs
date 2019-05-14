@@ -46,15 +46,6 @@ namespace ProiectPAW
             MessageBox.Show(Properties.Settings.Default.test);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            grMenu.Text = "Merge!";
-            //grMenu.Update();
-            dbSettingsForm dbSettings = new dbSettingsForm();
-            dbSettings.ShowDialog();
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();

@@ -123,7 +123,6 @@
             this.btnDbSettings.TabIndex = 6;
             this.btnDbSettings.Text = "Database settings";
             this.btnDbSettings.UseVisualStyleBackColor = false;
-            this.btnDbSettings.Click += new System.EventHandler(this.button2_Click);
             // 
             // grMenu
             // 

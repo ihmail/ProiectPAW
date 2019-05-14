@@ -7,6 +7,7 @@ namespace ProiectPAW
 {
     public class User
     {
+        public int id;
         public string username;
         public string FirstName;
         public string LastName;
@@ -16,6 +17,17 @@ namespace ProiectPAW
 
         public User(string user, string first, string last, string spec, string job, string type)
         {
+            this.username = user;
+            this.FirstName = first;
+            this.LastName = last;
+            this.specialization = spec;
+            this.JobTitle = job;
+            this.type = type;
+        }
+
+        public User(int id, string user, string first, string last, string spec, string job, string type)
+        {
+            this.id = id;
             this.username = user;
             this.FirstName = first;
             this.LastName = last;
