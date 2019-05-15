@@ -118,5 +118,13 @@ namespace ProiectPAW
             ChangePassword changePass = new ChangePassword(toChangePass);
             changePass.ShowDialog();
         }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.ShowDialog();
+            users = dbQuery.loadUsers();
+            displayUsers();
+        }
     }
 }

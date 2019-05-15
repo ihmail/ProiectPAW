@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChgPass = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.txtSearchUser = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnChgPass = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing users";
             // 
+            // btnChgPass
+            // 
+            this.btnChgPass.Location = new System.Drawing.Point(340, 24);
+            this.btnChgPass.Name = "btnChgPass";
+            this.btnChgPass.Size = new System.Drawing.Size(112, 23);
+            this.btnChgPass.TabIndex = 5;
+            this.btnChgPass.Text = "&Change Password";
+            this.btnChgPass.UseVisualStyleBackColor = true;
+            this.btnChgPass.Click += new System.EventHandler(this.btnChgPass_Click);
+            // 
             // btnAddUser
             // 
             this.btnAddUser.Location = new System.Drawing.Point(458, 24);
@@ -70,6 +80,7 @@
             this.btnAddUser.TabIndex = 4;
             this.btnAddUser.Text = "&Add User";
             this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnEdit
             // 
@@ -169,16 +180,6 @@
             this.btnBack.Text = "&Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnChgPass
-            // 
-            this.btnChgPass.Location = new System.Drawing.Point(340, 24);
-            this.btnChgPass.Name = "btnChgPass";
-            this.btnChgPass.Size = new System.Drawing.Size(112, 23);
-            this.btnChgPass.TabIndex = 5;
-            this.btnChgPass.Text = "&Change Password";
-            this.btnChgPass.UseVisualStyleBackColor = true;
-            this.btnChgPass.Click += new System.EventHandler(this.btnChgPass_Click);
             // 
             // UserManagementForm
             // 

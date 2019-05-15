@@ -166,5 +166,41 @@ namespace ProiectPAW
             conn.Close();
         }
 
+        public static bool checkDupe(string username)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string check = "select * from users where username=@user";
+            MySqlCommand command = new MySqlCommand(check, conn);
+            command.Parameters.AddWithValue("user", username);
+            conn.Open();
+            int result = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            if(result == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public static void addUser(string username, string firstName, string lastName, string spec, string title, string type)
+        {
+            string pass = "changeme";
+            MySqlConnection conn = new MySqlConnection(connString());
+            string addUser = "INSERT INTO users (username, password, first_name, last_name, specialization, job_title, type) VALUES ( @username, '"+pass+"', @firstName, @lastName, @spec, @title, @type);";
+            MySqlCommand command = new MySqlCommand(addUser, conn);
+            command.Parameters.AddWithValue("username", username);
+            command.Parameters.AddWithValue("firstName", firstName);
+            command.Parameters.AddWithValue("lastName", lastName);
+            command.Parameters.AddWithValue("spec", spec);
+            command.Parameters.AddWithValue("title", title);
+            command.Parameters.AddWithValue("type", type);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
