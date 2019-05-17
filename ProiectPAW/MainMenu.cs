@@ -29,28 +29,6 @@ namespace ProiectPAW
             lblPopTitle.Text = currentUser.JobTitle;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void tsAdminDatabase_Click(object sender, EventArgs e)
-        {
-            dbSettingsForm dbSettings = new dbSettingsForm();
-            dbSettings.ShowDialog();
-        }
-
-        //Button for testing purposes
-        private void test_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(Properties.Settings.Default.test);
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -60,6 +38,17 @@ namespace ProiectPAW
         {
             UserManagementForm userManagement = new UserManagementForm();
             userManagement.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDbSettings_Click(object sender, EventArgs e)
+        {
+            dbSettingsForm dbSettings = new dbSettingsForm();
+            dbSettings.ShowDialog();
         }
     }
 }
