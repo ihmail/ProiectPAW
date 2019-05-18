@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.ctxtType = new System.Windows.Forms.ComboBox();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtSpec = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -44,6 +42,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.grAdd = new System.Windows.Forms.GroupBox();
+            this.ctxtTitle = new System.Windows.Forms.ComboBox();
+            this.ctxtSpec = new System.Windows.Forms.ComboBox();
             this.grAdd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,43 +57,32 @@
             this.ctxtType.Location = new System.Drawing.Point(123, 200);
             this.ctxtType.Name = "ctxtType";
             this.ctxtType.Size = new System.Drawing.Size(100, 21);
-            this.ctxtType.TabIndex = 23;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(123, 170);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
-            this.txtTitle.TabIndex = 22;
-            // 
-            // txtSpec
-            // 
-            this.txtSpec.Location = new System.Drawing.Point(123, 140);
-            this.txtSpec.Name = "txtSpec";
-            this.txtSpec.Size = new System.Drawing.Size(100, 20);
-            this.txtSpec.TabIndex = 21;
+            this.ctxtType.TabIndex = 6;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(123, 110);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 20;
+            this.txtLastName.TabIndex = 3;
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(123, 80);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 19;
+            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstName_KeyPress);
             // 
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(123, 50);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 18;
+            this.txtUser.TabIndex = 0;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lblType
             // 
@@ -154,7 +143,7 @@
             this.btnCheckAval.Location = new System.Drawing.Point(238, 48);
             this.btnCheckAval.Name = "btnCheckAval";
             this.btnCheckAval.Size = new System.Drawing.Size(115, 23);
-            this.btnCheckAval.TabIndex = 24;
+            this.btnCheckAval.TabIndex = 1;
             this.btnCheckAval.Text = "Check availability";
             this.btnCheckAval.UseVisualStyleBackColor = true;
             this.btnCheckAval.Click += new System.EventHandler(this.btnCheckAval_Click);
@@ -164,7 +153,7 @@
             this.btnAdd.Location = new System.Drawing.Point(238, 168);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(115, 23);
-            this.btnAdd.TabIndex = 25;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add user";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -174,7 +163,7 @@
             this.btnBack.Location = new System.Drawing.Point(238, 198);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(115, 23);
-            this.btnBack.TabIndex = 26;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -182,24 +171,107 @@
             // grAdd
             // 
             this.grAdd.Controls.Add(this.lblUsername);
-            this.grAdd.Location = new System.Drawing.Point(12, 12);
+            this.grAdd.Location = new System.Drawing.Point(13, 12);
             this.grAdd.Name = "grAdd";
             this.grAdd.Size = new System.Drawing.Size(386, 239);
             this.grAdd.TabIndex = 27;
             this.grAdd.TabStop = false;
             this.grAdd.Text = "User details";
             // 
+            // ctxtTitle
+            // 
+            this.ctxtTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctxtTitle.FormattingEnabled = true;
+            this.ctxtTitle.Items.AddRange(new object[] {
+            "Rezident",
+            "Specialist",
+            "Primar"});
+            this.ctxtTitle.Location = new System.Drawing.Point(123, 170);
+            this.ctxtTitle.Name = "ctxtTitle";
+            this.ctxtTitle.Size = new System.Drawing.Size(100, 21);
+            this.ctxtTitle.TabIndex = 5;
+            // 
+            // ctxtSpec
+            // 
+            this.ctxtSpec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctxtSpec.FormattingEnabled = true;
+            this.ctxtSpec.Items.AddRange(new object[] {
+            "Alergologie si imunologie clinica",
+            "Anatomie patologica",
+            "Anestezie si terapie intensiva",
+            "Boli infectioase",
+            "Cardiologie",
+            "Chirurgie cardiovasculara",
+            "Chirurgie dento alveolara",
+            "Chirurgie generala",
+            "Chirurgie orala si maxilo faciala",
+            "Chirurgie pediatrica",
+            "Chirurgie plastica estetica si microchirurgie reconstructiva",
+            "Chirurgie toracica",
+            "Chirurgie vasculara",
+            "Dermatovenerologie",
+            "Diabet zaharat si boli metabolice",
+            "Endocrinologie",
+            "Endodontie",
+            "Epidemiologie",
+            "Expertiza medicala a capacitatii de munca",
+            "Farmacie clinica",
+            "Farmacologie clinica",
+            "Gastroenterologie",
+            "Genetica medicala",
+            "Geriatrie si gerontologie",
+            "Hematologie",
+            "Igiena",
+            "Laborator farmaceutic",
+            "Medicina de familie",
+            "Medicina de laborator",
+            "Medicina de urgenta",
+            "Medicina de urgenta 2013",
+            "Medicina interna",
+            "Medicina legala",
+            "Medicina muncii",
+            "Medicina nucleara",
+            "Medicina sportiva",
+            "Nefrologie",
+            "Neonatologie",
+            "Neurochirurgie",
+            "Neurologie",
+            "Neurologie pediatrica",
+            "Obstetrica ginecologie",
+            "Oftalmologie",
+            "Oncologie medicala",
+            "Ortodontie si ortopedie dento faciala",
+            "Ortopedie pediatrica",
+            "Ortopedie si traumatologie",
+            "Otorinolaringologie",
+            "Parodontologie",
+            "Pediatrie",
+            "Pneumologie",
+            "Protetica dentara",
+            "Psihiatrie",
+            "Psihiatrie pediatrica",
+            "Radiologie imagistica medicala",
+            "Radioterapie",
+            "Reabilitare medicala",
+            "Reumatologie",
+            "Sanatate publica si management",
+            "Urologie"});
+            this.ctxtSpec.Location = new System.Drawing.Point(123, 140);
+            this.ctxtSpec.Name = "ctxtSpec";
+            this.ctxtSpec.Size = new System.Drawing.Size(100, 21);
+            this.ctxtSpec.TabIndex = 4;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 264);
+            this.Controls.Add(this.ctxtTitle);
+            this.Controls.Add(this.ctxtSpec);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnCheckAval);
             this.Controls.Add(this.ctxtType);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtSpec);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtUser);
@@ -223,8 +295,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox ctxtType;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtSpec;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtUser;
@@ -238,5 +308,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.GroupBox grAdd;
+        private System.Windows.Forms.ComboBox ctxtTitle;
+        private System.Windows.Forms.ComboBox ctxtSpec;
     }
 }

@@ -49,6 +49,7 @@
             this.txtUser.TabIndex = 2;
             this.txtUser.Text = "Username";
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
             // txtPass
@@ -61,6 +62,7 @@
             this.txtPass.TabIndex = 3;
             this.txtPass.Text = "Password";
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // btnLogin

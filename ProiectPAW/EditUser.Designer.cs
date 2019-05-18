@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.gbEdit = new System.Windows.Forms.GroupBox();
+            this.ctxtTitle = new System.Windows.Forms.ComboBox();
+            this.ctxtSpec = new System.Windows.Forms.ComboBox();
             this.ctxtType = new System.Windows.Forms.ComboBox();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtSpec = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -48,9 +48,9 @@
             // 
             // gbEdit
             // 
+            this.gbEdit.Controls.Add(this.ctxtTitle);
+            this.gbEdit.Controls.Add(this.ctxtSpec);
             this.gbEdit.Controls.Add(this.ctxtType);
-            this.gbEdit.Controls.Add(this.txtTitle);
-            this.gbEdit.Controls.Add(this.txtSpec);
             this.gbEdit.Controls.Add(this.txtLastName);
             this.gbEdit.Controls.Add(this.txtFirstName);
             this.gbEdit.Controls.Add(this.txtUser);
@@ -67,6 +67,89 @@
             this.gbEdit.TabStop = false;
             this.gbEdit.Text = "Edit User Details";
             // 
+            // ctxtTitle
+            // 
+            this.ctxtTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctxtTitle.FormattingEnabled = true;
+            this.ctxtTitle.Items.AddRange(new object[] {
+            "Rezident",
+            "Specialist",
+            "Primar"});
+            this.ctxtTitle.Location = new System.Drawing.Point(107, 181);
+            this.ctxtTitle.Name = "ctxtTitle";
+            this.ctxtTitle.Size = new System.Drawing.Size(100, 21);
+            this.ctxtTitle.TabIndex = 12;
+            // 
+            // ctxtSpec
+            // 
+            this.ctxtSpec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctxtSpec.FormattingEnabled = true;
+            this.ctxtSpec.Items.AddRange(new object[] {
+            "Alergologie si imunologie clinica",
+            "Anatomie patologica",
+            "Anestezie si terapie intensiva",
+            "Boli infectioase",
+            "Cardiologie",
+            "Chirurgie cardiovasculara",
+            "Chirurgie dento alveolara",
+            "Chirurgie generala",
+            "Chirurgie orala si maxilo faciala",
+            "Chirurgie pediatrica",
+            "Chirurgie plastica estetica si microchirurgie reconstructiva",
+            "Chirurgie toracica",
+            "Chirurgie vasculara",
+            "Dermatovenerologie",
+            "Diabet zaharat si boli metabolice",
+            "Endocrinologie",
+            "Endodontie",
+            "Epidemiologie",
+            "Expertiza medicala a capacitatii de munca",
+            "Farmacie clinica",
+            "Farmacologie clinica",
+            "Gastroenterologie",
+            "Genetica medicala",
+            "Geriatrie si gerontologie",
+            "Hematologie",
+            "Igiena",
+            "Laborator farmaceutic",
+            "Medicina de familie",
+            "Medicina de laborator",
+            "Medicina de urgenta",
+            "Medicina de urgenta 2013",
+            "Medicina interna",
+            "Medicina legala",
+            "Medicina muncii",
+            "Medicina nucleara",
+            "Medicina sportiva",
+            "Nefrologie",
+            "Neonatologie",
+            "Neurochirurgie",
+            "Neurologie",
+            "Neurologie pediatrica",
+            "Obstetrica ginecologie",
+            "Oftalmologie",
+            "Oncologie medicala",
+            "Ortodontie si ortopedie dento faciala",
+            "Ortopedie pediatrica",
+            "Ortopedie si traumatologie",
+            "Otorinolaringologie",
+            "Parodontologie",
+            "Pediatrie",
+            "Pneumologie",
+            "Protetica dentara",
+            "Psihiatrie",
+            "Psihiatrie pediatrica",
+            "Radiologie imagistica medicala",
+            "Radioterapie",
+            "Reabilitare medicala",
+            "Reumatologie",
+            "Sanatate publica si management",
+            "Urologie"});
+            this.ctxtSpec.Location = new System.Drawing.Point(107, 151);
+            this.ctxtSpec.Name = "ctxtSpec";
+            this.ctxtSpec.Size = new System.Drawing.Size(100, 21);
+            this.ctxtSpec.TabIndex = 5;
+            // 
             // ctxtType
             // 
             this.ctxtType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -79,26 +162,13 @@
             this.ctxtType.Size = new System.Drawing.Size(100, 21);
             this.ctxtType.TabIndex = 11;
             // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(107, 181);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 20);
-            this.txtTitle.TabIndex = 10;
-            // 
-            // txtSpec
-            // 
-            this.txtSpec.Location = new System.Drawing.Point(107, 151);
-            this.txtSpec.Name = "txtSpec";
-            this.txtSpec.Size = new System.Drawing.Size(100, 20);
-            this.txtSpec.TabIndex = 9;
-            // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(107, 121);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 8;
+            this.txtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLastName_KeyPress);
             // 
             // txtFirstName
             // 
@@ -106,6 +176,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFirstName_KeyPress);
             // 
             // txtUser
             // 
@@ -212,8 +283,6 @@
 
         private System.Windows.Forms.GroupBox gbEdit;
         private System.Windows.Forms.ComboBox ctxtType;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtSpec;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtUser;
@@ -225,5 +294,7 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ComboBox ctxtSpec;
+        private System.Windows.Forms.ComboBox ctxtTitle;
     }
 }

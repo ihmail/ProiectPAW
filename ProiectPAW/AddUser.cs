@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading;
 
 namespace ProiectPAW
 {
@@ -14,6 +16,7 @@ namespace ProiectPAW
     {
         private bool check = false;
         private bool available = false;
+        private TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
 
         public AddUser()
         {
@@ -45,15 +48,15 @@ namespace ProiectPAW
                 return;
             }
 
-            if(txtSpec.Text == "")
+            if(ctxtSpec.Text == "")
             {
                 MessageBox.Show("Please enter a specialization", "Warning");
                 return;
             }
 
-            if(txtTitle.Text == "")
+            if(ctxtTitle.Text == "")
             {
-                MessageBox.Show("Please enter a job title", "Warning");
+                MessageBox.Show("Please select a job title", "Warning");
                 return;
             }
 
@@ -68,8 +71,8 @@ namespace ProiectPAW
                 if(available == true)
                 {
                     //this is where the magic has to happen
-                    dbQuery.addUser(txtUser.Text, txtFirstName.Text, txtLastName.Text, txtSpec.Text, txtTitle.Text, ctxtType.Text);
-                    MessageBox.Show("The following user has been added:\n\nUsername: "+txtUser.Text+"\nFirst Name: "+ txtFirstName.Text +"\nLast Name: " + txtLastName.Text + "\nSpecialization: "+ txtSpec.Text + "\nJob title: "+ txtTitle.Text +"\nUser Type: "+ ctxtType.Text, "Add user");
+                    dbQuery.addUser(txtUser.Text.ToLower(), ti.ToTitleCase(txtFirstName.Text.ToLower()), ti.ToTitleCase(txtLastName.Text.ToLower()), ctxtSpec.Text, ctxtTitle.Text, ctxtType.Text);
+                    MessageBox.Show("The following user has been added:\n\nUsername: "+txtUser.Text.ToLower()+"\nFirst Name: "+ ti.ToTitleCase(txtFirstName.Text.ToLower()) + "\nLast Name: " + ti.ToTitleCase(txtLastName.Text.ToLower()) + "\nSpecialization: "+ ctxtSpec.Text + "\nJob title: "+ ctxtTitle.Text +"\nUser Type: "+ ctxtType.Text, "Add user\n\nDefault password is changeme - please advise user to change!");
                 }
                 else
                 {
@@ -101,6 +104,30 @@ namespace ProiectPAW
         {
             check = false;
             available = false;
+        }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

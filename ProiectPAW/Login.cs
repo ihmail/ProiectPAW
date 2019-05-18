@@ -118,5 +118,21 @@ namespace ProiectPAW
             btnForgotPass.ForeColor = Color.Silver;
             btnForgotPass.Font = new Font(btnForgotPass.Font, FontStyle.Regular);
         }
+
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

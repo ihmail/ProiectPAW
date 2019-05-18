@@ -46,5 +46,21 @@ namespace ProiectPAW
                 this.Close();
             }
         }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtConfirm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

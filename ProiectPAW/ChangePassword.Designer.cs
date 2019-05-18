@@ -70,6 +70,7 @@
             this.txtConfirm.PasswordChar = '*';
             this.txtConfirm.Size = new System.Drawing.Size(100, 20);
             this.txtConfirm.TabIndex = 9;
+            this.txtConfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirm_KeyPress);
             // 
             // txtPass
             // 
@@ -78,6 +79,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 8;
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // label4
             // 

@@ -55,16 +55,16 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.grMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.gbPatientDetails.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -235,7 +235,7 @@
             // lblPopTitle
             // 
             this.lblPopTitle.ForeColor = System.Drawing.Color.White;
-            this.lblPopTitle.Location = new System.Drawing.Point(97, 97);
+            this.lblPopTitle.Location = new System.Drawing.Point(97, 113);
             this.lblPopTitle.Name = "lblPopTitle";
             this.lblPopTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPopTitle.Size = new System.Drawing.Size(120, 13);
@@ -245,7 +245,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(6, 97);
+            this.lblTitle.Location = new System.Drawing.Point(6, 113);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(60, 13);
             this.lblTitle.TabIndex = 2;
@@ -254,17 +254,17 @@
             // lblPopSpec
             // 
             this.lblPopSpec.ForeColor = System.Drawing.Color.White;
-            this.lblPopSpec.Location = new System.Drawing.Point(97, 65);
+            this.lblPopSpec.Location = new System.Drawing.Point(20, 68);
             this.lblPopSpec.Name = "lblPopSpec";
             this.lblPopSpec.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPopSpec.Size = new System.Drawing.Size(120, 13);
+            this.lblPopSpec.Size = new System.Drawing.Size(197, 35);
             this.lblPopSpec.TabIndex = 4;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(6, 35);
+            this.lblName.Location = new System.Drawing.Point(6, 17);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(43, 13);
             this.lblName.TabIndex = 0;
@@ -273,7 +273,7 @@
             // lblPopName
             // 
             this.lblPopName.ForeColor = System.Drawing.Color.White;
-            this.lblPopName.Location = new System.Drawing.Point(97, 35);
+            this.lblPopName.Location = new System.Drawing.Point(97, 17);
             this.lblPopName.Name = "lblPopName";
             this.lblPopName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPopName.Size = new System.Drawing.Size(120, 13);
@@ -283,7 +283,7 @@
             // 
             this.lblSpecialization.AutoSize = true;
             this.lblSpecialization.ForeColor = System.Drawing.Color.White;
-            this.lblSpecialization.Location = new System.Drawing.Point(6, 65);
+            this.lblSpecialization.Location = new System.Drawing.Point(6, 44);
             this.lblSpecialization.Name = "lblSpecialization";
             this.lblSpecialization.Size = new System.Drawing.Size(90, 13);
             this.lblSpecialization.TabIndex = 1;
@@ -334,15 +334,6 @@
             this.panel2.Size = new System.Drawing.Size(897, 182);
             this.panel2.TabIndex = 12;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
-            this.panel3.Controls.Add(this.groupBox2);
-            this.panel3.Location = new System.Drawing.Point(297, 220);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(897, 480);
-            this.panel3.TabIndex = 13;
-            // 
             // gbPatientDetails
             // 
             this.gbPatientDetails.Controls.Add(this.btnExit);
@@ -355,6 +346,15 @@
             this.gbPatientDetails.TabIndex = 10;
             this.gbPatientDetails.TabStop = false;
             this.gbPatientDetails.Text = "Patient Details";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            this.panel3.Controls.Add(this.groupBox2);
+            this.panel3.Location = new System.Drawing.Point(297, 220);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(897, 480);
+            this.panel3.TabIndex = 13;
             // 
             // groupBox2
             // 
@@ -388,8 +388,8 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.gbPatientDetails.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
