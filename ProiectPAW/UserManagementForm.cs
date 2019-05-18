@@ -53,7 +53,7 @@ namespace ProiectPAW
             lvUsers.Items.Clear();
             foreach (User user in users)
             {
-                if (user.username.ToLower().Contains(txtSearchUser.Text.ToLower()))
+                if (user.username.ToLower().Contains(txtSearchUser.Text.ToLower()) || user.FirstName.ToLower().Contains(txtSearchUser.Text.ToLower()) || user.LastName.ToLower().Contains(txtSearchUser.Text.ToLower()))
                 {
                     var listViewItem = new ListViewItem(user.username);
                     listViewItem.SubItems.Add(user.FirstName);

@@ -29,11 +29,6 @@ namespace ProiectPAW
 
         }
 
-        private void ChangeAccountDetails_Paint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(new Pen(Color.FromArgb(51, 107, 135), 4), this.DisplayRectangle);
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();

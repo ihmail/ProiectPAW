@@ -55,10 +55,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grPatients = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnChangePass = new System.Windows.Forms.Button();
+            this.lvPatients = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.grMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,6 +70,7 @@
             this.panel2.SuspendLayout();
             this.gbPatientDetails.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.grPatients.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -327,22 +332,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
-            this.panel3.Controls.Add(this.groupBox2);
+            this.panel3.Controls.Add(this.grPatients);
             this.panel3.Location = new System.Drawing.Point(297, 220);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(897, 480);
             this.panel3.TabIndex = 13;
             // 
-            // groupBox2
+            // grPatients
             // 
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(16, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(868, 452);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.grPatients.Controls.Add(this.lvPatients);
+            this.grPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grPatients.ForeColor = System.Drawing.Color.White;
+            this.grPatients.Location = new System.Drawing.Point(16, 15);
+            this.grPatients.Name = "grPatients";
+            this.grPatients.Size = new System.Drawing.Size(868, 452);
+            this.grPatients.TabIndex = 0;
+            this.grPatients.TabStop = false;
+            this.grPatients.Text = "My Patients";
             // 
             // btnExit
             // 
@@ -384,6 +390,41 @@
             this.btnChangePass.UseVisualStyleBackColor = false;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
+            // lvPatients
+            // 
+            this.lvPatients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            this.lvPatients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvPatients.ForeColor = System.Drawing.Color.White;
+            this.lvPatients.FullRowSelect = true;
+            this.lvPatients.GridLines = true;
+            this.lvPatients.HideSelection = false;
+            this.lvPatients.Location = new System.Drawing.Point(6, 42);
+            this.lvPatients.MultiSelect = false;
+            this.lvPatients.Name = "lvPatients";
+            this.lvPatients.Size = new System.Drawing.Size(856, 404);
+            this.lvPatients.TabIndex = 3;
+            this.lvPatients.TileSize = new System.Drawing.Size(188, 30);
+            this.lvPatients.UseCompatibleStateImageBehavior = false;
+            this.lvPatients.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Patient name";
+            this.columnHeader1.Width = 125;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Hospitalization reason";
+            this.columnHeader3.Width = 574;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Admission date";
+            this.columnHeader4.Width = 151;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +449,7 @@
             this.panel2.ResumeLayout(false);
             this.gbPatientDetails.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.grPatients.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,8 +483,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox gbPatientDetails;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grPatients;
         private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.ListView lvPatients;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

@@ -260,7 +260,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeAccountDetails";
             this.Load += new System.EventHandler(this.ChangeAccountDetails_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ChangeAccountDetails_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

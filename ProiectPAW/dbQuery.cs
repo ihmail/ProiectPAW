@@ -133,6 +133,29 @@ namespace ProiectPAW
             return _users;
         }
 
+        public static List<MyPatientsList> loadMyPatientsView(int user_id)
+        {
+            List<MyPatientsList> patientsView = new List<MyPatientsList>();
+            MySqlConnection conn = new MySqlConnection(connString());
+            conn.Open();
+            string load = "select p.cnp, concat(p.first_name, ' ', p.last_name), h.id_hosp, h.hosp_reason, h.hosp_date from patients p, users d, hospitalizations h where h.id_patient=p.cnp and h.id_doctor=d.id and h.id_doctor="+user_id+";";
+            MySqlCommand command = new MySqlCommand(load, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    patientsView.Add(new MyPatientsList(reader.GetInt64(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetDateTime(4)));
+                }
+            }
+            finally
+            {
+                reader.Close();
+            }
+            conn.Close();
+            return patientsView;
+        }
+
         public static void deleteUser(User user)
         {
             MySqlConnection conn = new MySqlConnection(connString());
@@ -205,5 +228,6 @@ namespace ProiectPAW
             command.ExecuteNonQuery();
             conn.Close();
         }
+
     }
 }

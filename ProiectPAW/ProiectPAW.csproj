@@ -108,6 +108,7 @@
     <Compile Include="EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyPatientsList.cs" />
     <Compile Include="UserChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
