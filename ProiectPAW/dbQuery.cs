@@ -85,25 +85,28 @@ namespace ProiectPAW
         public static User loggedIn(string user)
         {
             MySqlConnection conn = new MySqlConnection(connString());
-            MySqlCommand command = new MySqlCommand("select username, first_name, last_name, specialization, job_title, type from users where username=@user;", conn);
+            MySqlCommand command = new MySqlCommand("select id, username, password, first_name, last_name, specialization, job_title, type from users where username=@user;", conn);
             command.Parameters.AddWithValue("user", user);
             conn.Open();
             MySqlDataReader reader = command.ExecuteReader();
-            string userName, firstname, lastname, spec, job, type;
-            userName = firstname = lastname = spec = job = type = String.Empty;
+            string userName, password, firstname, lastname, spec, job, type;
+            int id = 0;
+            userName = password = firstname = lastname = spec = job = type = String.Empty;
             while (reader.Read())
             {
-                userName = reader.GetString(0);
-                firstname = reader.GetString(1);
-                lastname = reader.GetString(2);
-                spec = reader.GetString(3);
-                job = reader.GetString(4);
-                type = reader.GetString(5);
+                id = reader.GetInt32(0);
+                userName = reader.GetString(1);
+                password = reader.GetString(2);
+                firstname = reader.GetString(3);
+                lastname = reader.GetString(4);
+                spec = reader.GetString(5);
+                job = reader.GetString(6);
+                type = reader.GetString(7);
 
             }
             reader.Close();
             conn.Close();
-            User current = new User(userName, firstname, lastname, spec, job, type);
+            User current = new User(id, userName, password, firstname, lastname, spec, job, type);
             return current;
         }
 

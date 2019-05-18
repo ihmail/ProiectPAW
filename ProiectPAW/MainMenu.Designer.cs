@@ -381,6 +381,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GETA v.0.1";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grMenu.ResumeLayout(false);

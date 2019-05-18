@@ -33,6 +33,11 @@ namespace ProiectPAW
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            if(txtPass.Text.Count() < 8)
+            {
+                MessageBox.Show("Password must be at least 8 characters long.", "Warning");
+                return;
+            }
             if(txtPass.Text != txtConfirm.Text)
             {
                 MessageBox.Show("Passwords do not match", "Warning");

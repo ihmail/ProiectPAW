@@ -50,5 +50,14 @@ namespace ProiectPAW
             dbSettingsForm dbSettings = new dbSettingsForm();
             dbSettings.ShowDialog();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            if(currentUser.password == "changeme")
+            {
+                FirstTimeLogin firstTime = new FirstTimeLogin(currentUser);
+                firstTime.ShowDialog();
+            }
+        }
     }
 }
