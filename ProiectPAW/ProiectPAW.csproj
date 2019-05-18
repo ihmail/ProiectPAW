@@ -83,6 +83,12 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeAccountDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAccountDetails.Designer.cs">
+      <DependentUpon>ChangeAccountDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +108,11 @@
     <Compile Include="EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FirstTimeLogin.cs">
+    <Compile Include="UserChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FirstTimeLogin.Designer.cs">
-      <DependentUpon>FirstTimeLogin.cs</DependentUpon>
+    <Compile Include="UserChangePassword.Designer.cs">
+      <DependentUpon>UserChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
@@ -138,6 +144,9 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAccountDetails.resx">
+      <DependentUpon>ChangeAccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +156,8 @@
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FirstTimeLogin.resx">
-      <DependentUpon>FirstTimeLogin.cs</DependentUpon>
+    <EmbeddedResource Include="UserChangePassword.resx">
+      <DependentUpon>UserChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

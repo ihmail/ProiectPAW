@@ -55,9 +55,22 @@ namespace ProiectPAW
         {
             if(currentUser.password == "changeme")
             {
-                FirstTimeLogin firstTime = new FirstTimeLogin(currentUser);
+                UserChangePassword firstTime = new UserChangePassword(currentUser, "This is your first time logging in\nPlease change your password", 1);
                 firstTime.ShowDialog();
             }
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            ChangeAccountDetails changeDetails = new ChangeAccountDetails(currentUser);
+            changeDetails.ShowDialog();
+            Update();
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            UserChangePassword firstTime = new UserChangePassword(currentUser, "Enter new password below", 0);
+            firstTime.ShowDialog();
         }
     }
 }

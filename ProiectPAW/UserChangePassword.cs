@@ -10,19 +10,30 @@ using System.Windows.Forms;
 
 namespace ProiectPAW
 {
-    public partial class FirstTimeLogin : Form
+    public partial class UserChangePassword : Form
     {
         User user;
-        string password;
-        public FirstTimeLogin(User newLogin)
+        int reqType;
+        public UserChangePassword(User newLogin, string text, int type)
         {
             InitializeComponent();
             user = newLogin;
+            lblText.Text = text;
+            reqType = type;
         }
 
         private void FirstTimeLogin_Load(object sender, EventArgs e)
         {
-
+            if (reqType == 1)
+            {
+                btnBack.Visible = false;
+                this.Size = new Size(311 ,251);
+            }
+            else
+            {
+                btnBack.Visible = true;
+                this.Size = new Size(311, 280);
+            }
         }
 
         private void btnListPatients_Click(object sender, EventArgs e)
@@ -65,6 +76,11 @@ namespace ProiectPAW
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

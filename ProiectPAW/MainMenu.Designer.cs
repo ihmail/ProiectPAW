@@ -52,12 +52,13 @@
             this.lblPopName = new System.Windows.Forms.Label();
             this.lblSpecialization = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -134,6 +135,7 @@
             // 
             // grMenu
             // 
+            this.grMenu.Controls.Add(this.btnChangePass);
             this.grMenu.Controls.Add(this.btnUserManagement);
             this.grMenu.Controls.Add(this.btnAccount);
             this.grMenu.Controls.Add(this.btnAddPatient);
@@ -175,6 +177,7 @@
             this.btnAccount.TabIndex = 10;
             this.btnAccount.Text = "Change account details";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnAddPatient
             // 
@@ -299,32 +302,6 @@
             this.panel1.Size = new System.Drawing.Size(268, 688);
             this.panel1.TabIndex = 11;
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(749, 17);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(53, 49);
-            this.btnMinimize.TabIndex = 9;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::ProiectPAW.Properties.Resources.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(809, 17);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 49);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
@@ -366,6 +343,46 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::ProiectPAW.Properties.Resources.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(809, 17);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(53, 49);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(749, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(53, 49);
+            this.btnMinimize.TabIndex = 9;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.Location = new System.Drawing.Point(33, 218);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(147, 38);
+            this.btnChangePass.TabIndex = 12;
+            this.btnChangePass.Text = "Change password";
+            this.btnChangePass.UseVisualStyleBackColor = false;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // MainMenu
             // 
@@ -425,6 +442,7 @@
         private System.Windows.Forms.GroupBox gbPatientDetails;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnChangePass;
     }
 }
 
