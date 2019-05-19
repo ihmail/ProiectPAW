@@ -29,6 +29,11 @@ namespace ProiectPAW
             this.evolutie = evol;
             this.observatii = obs;
         }
+
+        //internal int getID(Gateo g)
+        //{
+        //    return g.id_gateo;
+        //}
     }
 
 

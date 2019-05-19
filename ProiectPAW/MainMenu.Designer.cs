@@ -55,7 +55,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
@@ -67,6 +66,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnTest = new System.Windows.Forms.Panel();
             this.grGateo = new System.Windows.Forms.GroupBox();
+            this.btnEditGateo = new System.Windows.Forms.Button();
             this.btnBackGateo = new System.Windows.Forms.Button();
             this.lvGateo = new System.Windows.Forms.ListView();
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -100,7 +100,7 @@
             this.tsAdmin});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1189, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1206, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -272,7 +272,7 @@
             // lblPopTitle
             // 
             this.lblPopTitle.ForeColor = System.Drawing.Color.White;
-            this.lblPopTitle.Location = new System.Drawing.Point(97, 113);
+            this.lblPopTitle.Location = new System.Drawing.Point(97, 96);
             this.lblPopTitle.Name = "lblPopTitle";
             this.lblPopTitle.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPopTitle.Size = new System.Drawing.Size(120, 13);
@@ -282,7 +282,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(6, 113);
+            this.lblTitle.Location = new System.Drawing.Point(6, 96);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(60, 13);
             this.lblTitle.TabIndex = 2;
@@ -291,17 +291,17 @@
             // lblPopSpec
             // 
             this.lblPopSpec.ForeColor = System.Drawing.Color.White;
-            this.lblPopSpec.Location = new System.Drawing.Point(20, 68);
+            this.lblPopSpec.Location = new System.Drawing.Point(97, 63);
             this.lblPopSpec.Name = "lblPopSpec";
             this.lblPopSpec.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPopSpec.Size = new System.Drawing.Size(197, 35);
+            this.lblPopSpec.Size = new System.Drawing.Size(120, 13);
             this.lblPopSpec.TabIndex = 4;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(6, 17);
+            this.lblName.Location = new System.Drawing.Point(6, 33);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(43, 13);
             this.lblName.TabIndex = 0;
@@ -310,7 +310,7 @@
             // lblPopName
             // 
             this.lblPopName.ForeColor = System.Drawing.Color.White;
-            this.lblPopName.Location = new System.Drawing.Point(97, 17);
+            this.lblPopName.Location = new System.Drawing.Point(97, 33);
             this.lblPopName.Name = "lblPopName";
             this.lblPopName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPopName.Size = new System.Drawing.Size(120, 13);
@@ -320,7 +320,7 @@
             // 
             this.lblSpecialization.AutoSize = true;
             this.lblSpecialization.ForeColor = System.Drawing.Color.White;
-            this.lblSpecialization.Location = new System.Drawing.Point(6, 44);
+            this.lblSpecialization.Location = new System.Drawing.Point(6, 63);
             this.lblSpecialization.Name = "lblSpecialization";
             this.lblSpecialization.Size = new System.Drawing.Size(90, 13);
             this.lblSpecialization.TabIndex = 1;
@@ -347,7 +347,6 @@
             // 
             // gbPatientDetails
             // 
-            this.gbPatientDetails.Controls.Add(this.button1);
             this.gbPatientDetails.Controls.Add(this.btnExit);
             this.gbPatientDetails.Controls.Add(this.btnMinimize);
             this.gbPatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,16 +357,6 @@
             this.gbPatientDetails.TabIndex = 10;
             this.gbPatientDetails.TabStop = false;
             this.gbPatientDetails.Text = "Patient Details";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(153, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExit
             // 
@@ -420,6 +409,7 @@
             // btnViewGateo
             // 
             this.btnViewGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnViewGateo.Enabled = false;
             this.btnViewGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewGateo.ForeColor = System.Drawing.Color.White;
@@ -450,6 +440,7 @@
             this.lvPatients.TileSize = new System.Drawing.Size(188, 30);
             this.lvPatients.UseCompatibleStateImageBehavior = false;
             this.lvPatients.View = System.Windows.Forms.View.Details;
+            this.lvPatients.Click += new System.EventHandler(this.lvPatients_Click);
             this.lvPatients.DoubleClick += new System.EventHandler(this.btnViewGateo_Click);
             // 
             // columnHeader1
@@ -478,6 +469,7 @@
             // 
             // grGateo
             // 
+            this.grGateo.Controls.Add(this.btnEditGateo);
             this.grGateo.Controls.Add(this.btnBackGateo);
             this.grGateo.Controls.Add(this.lvGateo);
             this.grGateo.Controls.Add(this.btnAddGateo);
@@ -490,13 +482,27 @@
             this.grGateo.TabStop = false;
             this.grGateo.Text = "GATE-O";
             // 
+            // btnEditGateo
+            // 
+            this.btnEditGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnEditGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditGateo.ForeColor = System.Drawing.Color.White;
+            this.btnEditGateo.Location = new System.Drawing.Point(562, 408);
+            this.btnEditGateo.Name = "btnEditGateo";
+            this.btnEditGateo.Size = new System.Drawing.Size(147, 38);
+            this.btnEditGateo.TabIndex = 16;
+            this.btnEditGateo.Text = "Edit GATE-O";
+            this.btnEditGateo.UseVisualStyleBackColor = false;
+            this.btnEditGateo.Click += new System.EventHandler(this.btnEditGateo_Click);
+            // 
             // btnBackGateo
             // 
             this.btnBackGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.btnBackGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackGateo.ForeColor = System.Drawing.Color.White;
-            this.btnBackGateo.Location = new System.Drawing.Point(562, 408);
+            this.btnBackGateo.Location = new System.Drawing.Point(409, 408);
             this.btnBackGateo.Name = "btnBackGateo";
             this.btnBackGateo.Size = new System.Drawing.Size(147, 38);
             this.btnBackGateo.TabIndex = 15;
@@ -527,6 +533,7 @@
             this.lvGateo.TileSize = new System.Drawing.Size(188, 30);
             this.lvGateo.UseCompatibleStateImageBehavior = false;
             this.lvGateo.View = System.Windows.Forms.View.Details;
+            this.lvGateo.DoubleClick += new System.EventHandler(this.btnEditGateo_Click);
             // 
             // Date
             // 
@@ -640,7 +647,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Panel pnTest;
         private System.Windows.Forms.GroupBox grGateo;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView lvGateo;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader5;
@@ -651,6 +657,7 @@
         private System.Windows.Forms.ColumnHeader Date;
         private System.Windows.Forms.Button btnBackGateo;
         private System.Windows.Forms.Button btnAddGateo;
+        private System.Windows.Forms.Button btnEditGateo;
     }
 }
 

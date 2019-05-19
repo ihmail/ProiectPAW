@@ -102,6 +102,12 @@
     <Compile Include="dbSettingsForm.Designer.cs">
       <DependentUpon>dbSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditGateoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditGateoForm.Designer.cs">
+      <DependentUpon>AddEditGateoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dbSettingsForm.resx">
       <DependentUpon>dbSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditGateoForm.resx">
+      <DependentUpon>AddEditGateoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>

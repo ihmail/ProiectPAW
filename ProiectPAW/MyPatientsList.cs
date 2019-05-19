@@ -23,6 +23,11 @@ namespace ProiectPAW
             this.hospDate = _hospDate;
         }
 
+        internal int getPatientID()
+        {
+            return this.hosp_id;
+        }
+
     }
 
   

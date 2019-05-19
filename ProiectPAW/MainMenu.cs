@@ -67,6 +67,9 @@ namespace ProiectPAW
                 firstTime.ShowDialog();
             }
             this.Size = new Size(1206, 712);
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -101,33 +104,9 @@ namespace ProiectPAW
             SetHeight(lvPatients, 50);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loadGateo()
         {
-            pnMain.Visible = false;
-            pnTest.Visible = true;
-            grGateo.Text = "GATE-O";
-            List<Gateo> gateos = dbQuery.getGateo(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
-            foreach (Gateo gateo in gateos)
-            {
-                var listViewItem = new ListViewItem(gateo.gateo_date.ToString("dd/MM/yyyy\nhh:mm"));
-                listViewItem.SubItems.Add(gateo.gandeste);
-                listViewItem.SubItems.Add(gateo.analize);
-                listViewItem.SubItems.Add(gateo.tratament);
-                listViewItem.SubItems.Add(gateo.evolutie);
-                listViewItem.SubItems.Add(gateo.observatii);
-
-
-                listViewItem.Tag = gateo.id_gateo;
-                lvGateo.Items.Add(listViewItem);
-
-            }
-            SetHeight(lvGateo, 200);
-        }
-
-        private void btnViewGateo_Click(object sender, EventArgs e)
-        {
-            
-            if(lvPatients.SelectedItems.Count != 0)
+            if (lvPatients.SelectedItems.Count != 0)
             {
                 lvGateo.Items.Clear();
                 pnMain.Visible = false;
@@ -154,7 +133,14 @@ namespace ProiectPAW
             {
                 MessageBox.Show("Please select a patient first", "Warning");
             }
-           
+        }
+
+        private void btnViewGateo_Click(object sender, EventArgs e)
+        {
+
+            loadGateo();
+
+
         }
 
         private void btnBackGateo_Click(object sender, EventArgs e)
@@ -162,5 +148,31 @@ namespace ProiectPAW
             pnMain.Visible = true;
             pnTest.Visible = false;
         }
+
+        private void btnEditGateo_Click(object sender, EventArgs e)
+        {
+            if(lvGateo.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a GATE-O entry", "Error");
+                return;
+            }
+            else
+            {
+                AddEditGateoForm editGateo = new AddEditGateoForm(Convert.ToInt32(lvGateo.SelectedItems[0].Tag), Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
+                editGateo.ShowDialog();
+                loadGateo();
+            }
+        }
+
+        private void lvPatients_Click(object sender, EventArgs e)
+        {
+            btnViewGateo.Enabled = true;
+        }
+
+        //private void btnAddGateo_Click(object sender, EventArgs e)
+        //{
+        //    AddEditGateoForm editGateo = new AddEditGateoForm();
+        //    editGateo.ShowDialog();
+        //}
     }
 }

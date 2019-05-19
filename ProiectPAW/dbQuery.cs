@@ -253,5 +253,36 @@ namespace ProiectPAW
 
         }
 
+        internal static Gateo getGateoToEdit(int gateo_id)
+        {
+            Gateo gateoToEdit = null;
+            string editGateoComm = "select * from gateo where id_gateo="+gateo_id+";";
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(editGateoComm, conn);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                gateoToEdit = new Gateo(reader.GetInt32(0), reader.GetDateTime(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+            }
+            reader.Close();
+            conn.Close();
+            return gateoToEdit;
+        }
+
+        internal static void editGateo(int _id_gateo, string _gand, string _anal, string _trat, string _evol, string _obs)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string editGateo = "update gateo set gandeste=@gand, analize=@anal, tratament=@trat, evolutie=@evol, observatii=@obs where id_gateo="+ _id_gateo + ";";
+            MySqlCommand command = new MySqlCommand(editGateo, conn);
+            command.Parameters.AddWithValue("gand", _gand);
+            command.Parameters.AddWithValue("anal", _anal);
+            command.Parameters.AddWithValue("trat", _trat);
+            command.Parameters.AddWithValue("evol", _evol);
+            command.Parameters.AddWithValue("obs", _obs);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
