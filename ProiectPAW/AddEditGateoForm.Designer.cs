@@ -107,7 +107,7 @@
             this.rtxtAnalize.MaxLength = 400;
             this.rtxtAnalize.Name = "rtxtAnalize";
             this.rtxtAnalize.Size = new System.Drawing.Size(727, 66);
-            this.rtxtAnalize.TabIndex = 7;
+            this.rtxtAnalize.TabIndex = 1;
             this.rtxtAnalize.Text = "";
             // 
             // rtxtGandeste
@@ -118,7 +118,7 @@
             this.rtxtGandeste.MaxLength = 400;
             this.rtxtGandeste.Name = "rtxtGandeste";
             this.rtxtGandeste.Size = new System.Drawing.Size(727, 66);
-            this.rtxtGandeste.TabIndex = 8;
+            this.rtxtGandeste.TabIndex = 0;
             this.rtxtGandeste.Text = "";
             // 
             // rtxtEvolutie
@@ -129,7 +129,7 @@
             this.rtxtEvolutie.MaxLength = 400;
             this.rtxtEvolutie.Name = "rtxtEvolutie";
             this.rtxtEvolutie.Size = new System.Drawing.Size(727, 66);
-            this.rtxtEvolutie.TabIndex = 9;
+            this.rtxtEvolutie.TabIndex = 3;
             this.rtxtEvolutie.Text = "";
             // 
             // rtxtObservatii
@@ -140,7 +140,7 @@
             this.rtxtObservatii.MaxLength = 400;
             this.rtxtObservatii.Name = "rtxtObservatii";
             this.rtxtObservatii.Size = new System.Drawing.Size(727, 66);
-            this.rtxtObservatii.TabIndex = 10;
+            this.rtxtObservatii.TabIndex = 4;
             this.rtxtObservatii.Text = "";
             // 
             // btnApplyEditGateo
@@ -152,7 +152,7 @@
             this.btnApplyEditGateo.Location = new System.Drawing.Point(617, 478);
             this.btnApplyEditGateo.Name = "btnApplyEditGateo";
             this.btnApplyEditGateo.Size = new System.Drawing.Size(147, 38);
-            this.btnApplyEditGateo.TabIndex = 15;
+            this.btnApplyEditGateo.TabIndex = 6;
             this.btnApplyEditGateo.Text = "Apply changes";
             this.btnApplyEditGateo.UseVisualStyleBackColor = false;
             this.btnApplyEditGateo.Click += new System.EventHandler(this.btnApplyEditGateo_Click);
@@ -166,7 +166,7 @@
             this.btnBackEditGateo.Location = new System.Drawing.Point(464, 478);
             this.btnBackEditGateo.Name = "btnBackEditGateo";
             this.btnBackEditGateo.Size = new System.Drawing.Size(147, 38);
-            this.btnBackEditGateo.TabIndex = 16;
+            this.btnBackEditGateo.TabIndex = 5;
             this.btnBackEditGateo.Text = "Back";
             this.btnBackEditGateo.UseVisualStyleBackColor = false;
             this.btnBackEditGateo.Click += new System.EventHandler(this.btnBackEditGateo_Click);
@@ -179,7 +179,7 @@
             this.rtxtTratament.MaxLength = 400;
             this.rtxtTratament.Name = "rtxtTratament";
             this.rtxtTratament.Size = new System.Drawing.Size(727, 66);
-            this.rtxtTratament.TabIndex = 19;
+            this.rtxtTratament.TabIndex = 2;
             this.rtxtTratament.Text = "";
             // 
             // label6

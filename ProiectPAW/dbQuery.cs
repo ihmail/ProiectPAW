@@ -138,7 +138,7 @@ namespace ProiectPAW
             List<MyPatientsList> patientsView = new List<MyPatientsList>();
             MySqlConnection conn = new MySqlConnection(connString());
             conn.Open();
-            string load = "select p.cnp, concat(p.first_name, ' ', p.last_name), h.id_hosp, h.hosp_reason, h.hosp_date from patients p, users d, hospitalizations h where h.id_patient=p.cnp and h.id_doctor=d.id and h.id_doctor="+user_id+";";
+            string load = "select p.cnp, concat(p.first_name, ' ', p.last_name), h.id_hosp, h.hosp_reason, h.hosp_date from patients p, users d, hospitalizations h where h.id_patient=p.cnp and h.id_doctor=d.id and h.id_doctor="+user_id+" order by h.hosp_date;";
             MySqlCommand command = new MySqlCommand(load, conn);
             MySqlDataReader reader = command.ExecuteReader();
             try
@@ -231,7 +231,7 @@ namespace ProiectPAW
 
         internal static List<Gateo> getGateo(int hosp_id)
         {
-            string getGateoComm = "select * from gateo where id_hosp=" + hosp_id + ";";
+            string getGateoComm = "select * from gateo where id_hosp=" + hosp_id + " order by date;";
             List<Gateo> gateoList = new List<Gateo>();
             MySqlConnection conn = new MySqlConnection(connString());
             MySqlCommand command = new MySqlCommand(getGateoComm, conn);
@@ -275,6 +275,22 @@ namespace ProiectPAW
             MySqlConnection conn = new MySqlConnection(connString());
             string editGateo = "update gateo set gandeste=@gand, analize=@anal, tratament=@trat, evolutie=@evol, observatii=@obs where id_gateo="+ _id_gateo + ";";
             MySqlCommand command = new MySqlCommand(editGateo, conn);
+            command.Parameters.AddWithValue("gand", _gand);
+            command.Parameters.AddWithValue("anal", _anal);
+            command.Parameters.AddWithValue("trat", _trat);
+            command.Parameters.AddWithValue("evol", _evol);
+            command.Parameters.AddWithValue("obs", _obs);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        internal static void addGateo(int _hosp_id, string _gand, string _anal, string _trat, string _evol, string _obs)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string editGateo = "INSERT INTO gateo (date, id_hosp, gandeste, analize, tratament, evolutie, observatii) VALUES(@added, "+_hosp_id+", @gand, @anal, @trat, @evol, @obs);";
+            MySqlCommand command = new MySqlCommand(editGateo, conn);
+            command.Parameters.AddWithValue("added", DateTime.Now);
             command.Parameters.AddWithValue("gand", _gand);
             command.Parameters.AddWithValue("anal", _anal);
             command.Parameters.AddWithValue("trat", _trat);

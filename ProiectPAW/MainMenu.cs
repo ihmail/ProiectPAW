@@ -169,10 +169,11 @@ namespace ProiectPAW
             btnViewGateo.Enabled = true;
         }
 
-        //private void btnAddGateo_Click(object sender, EventArgs e)
-        //{
-        //    AddEditGateoForm editGateo = new AddEditGateoForm();
-        //    editGateo.ShowDialog();
-        //}
+        private void btnAddGateo_Click(object sender, EventArgs e)
+        {
+            AddEditGateoForm addGateo = new AddEditGateoForm(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
+            addGateo.ShowDialog();
+            loadGateo();
+        }
     }
 }

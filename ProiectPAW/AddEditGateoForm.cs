@@ -16,6 +16,13 @@ namespace ProiectPAW
         bool edit = false;
         int gateo_id;
         int hosp_id;
+
+        public AddEditGateoForm()
+        {
+            InitializeComponent();
+
+        }
+
         public AddEditGateoForm(int _gateo_id, int hosp_id)
         {
             InitializeComponent();
@@ -29,9 +36,11 @@ namespace ProiectPAW
             rtxtObservatii.Text = toEdit.observatii;
         }
 
-        public AddEditGateoForm(int hosp_id, string addGateo)
+        public AddEditGateoForm(int _hosp_id)
         {
             InitializeComponent();
+            hosp_id = _hosp_id;
+            btnApplyEditGateo.Text = "Add GATE-O";
         }
 
         private void btnBackEditGateo_Click(object sender, EventArgs e)
@@ -45,27 +54,27 @@ namespace ProiectPAW
             {
                 if(rtxtGandeste.Text == string.Empty)
                 {
-                    MessageBox.Show("\"Gandeste\" field cannot be empty","Warnign");
+                    MessageBox.Show("\"Gandeste\" field cannot be empty","Warning");
                     return;
                 }
                 if (rtxtAnalize.Text == string.Empty)
                 {
-                    MessageBox.Show("\"Analize\" field cannot be empty", "Warnign");
+                    MessageBox.Show("\"Analize\" field cannot be empty", "Warning");
                     return;
                 }
                 if (rtxtTratament.Text == string.Empty)
                 {
-                    MessageBox.Show("\"ratament\" field cannot be empty", "Warnign");
+                    MessageBox.Show("\"ratament\" field cannot be empty", "Warning");
                     return;
                 }
                 if (rtxtEvolutie.Text == string.Empty)
                 {
-                    MessageBox.Show("\"Evolutie\" field cannot be empty", "Warnign");
+                    MessageBox.Show("\"Evolutie\" field cannot be empty", "Warning");
                     return;
                 }
                 if (rtxtObservatii.Text == string.Empty)
                 {
-                    MessageBox.Show("\"Observatii\" field cannot be empty", "Warnign");
+                    MessageBox.Show("\"Observatii\" field cannot be empty", "Warning");
                     return;
                 }
                 if (MessageBox.Show("Please confirm changes","Confirm", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -84,7 +93,39 @@ namespace ProiectPAW
             }
             else
             {
-                //dbquery.addgateo
+                if (rtxtGandeste.Text == string.Empty)
+                {
+                    MessageBox.Show("\"Gandeste\" field cannot be empty", "Warning");
+                    return;
+                }
+                if (rtxtAnalize.Text == string.Empty)
+                {
+                    MessageBox.Show("\"Analize\" field cannot be empty", "Warning");
+                    return;
+                }
+                if (rtxtTratament.Text == string.Empty)
+                {
+                    MessageBox.Show("\"ratament\" field cannot be empty", "Warning");
+                    return;
+                }
+                if (rtxtEvolutie.Text == string.Empty)
+                {
+                    MessageBox.Show("\"Evolutie\" field cannot be empty", "Warning");
+                    return;
+                }
+                if (rtxtObservatii.Text == string.Empty)
+                {
+                    MessageBox.Show("\"Observatii\" field cannot be empty", "Warning");
+                    return;
+                }
+                try
+                {
+                    dbQuery.addGateo(hosp_id, rtxtGandeste.Text, rtxtAnalize.Text, rtxtTratament.Text, rtxtEvolutie.Text, rtxtObservatii.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Changes could not be saved:\n\n" + ex.ToString(), "Failure");
+                }
             }
         }
     }

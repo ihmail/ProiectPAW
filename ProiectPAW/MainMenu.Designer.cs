@@ -528,7 +528,6 @@
             this.lvGateo.MultiSelect = false;
             this.lvGateo.Name = "lvGateo";
             this.lvGateo.Size = new System.Drawing.Size(856, 360);
-            this.lvGateo.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lvGateo.TabIndex = 4;
             this.lvGateo.TileSize = new System.Drawing.Size(188, 30);
             this.lvGateo.UseCompatibleStateImageBehavior = false;
@@ -577,6 +576,7 @@
             this.btnAddGateo.TabIndex = 14;
             this.btnAddGateo.Text = "Add GATE-O";
             this.btnAddGateo.UseVisualStyleBackColor = false;
+            this.btnAddGateo.Click += new System.EventHandler(this.btnAddGateo_Click);
             // 
             // MainMenu
             // 
