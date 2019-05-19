@@ -39,6 +39,7 @@
             this.tsAdminDatabase = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDbSettings = new System.Windows.Forms.Button();
             this.grMenu = new System.Windows.Forms.GroupBox();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.btnUserManagement = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnAddPatient = new System.Windows.Forms.Button();
@@ -54,23 +55,37 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.grPatients = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnChangePass = new System.Windows.Forms.Button();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.grPatients = new System.Windows.Forms.GroupBox();
+            this.btnViewGateo = new System.Windows.Forms.Button();
             this.lvPatients = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnTest = new System.Windows.Forms.Panel();
+            this.grGateo = new System.Windows.Forms.GroupBox();
+            this.btnBackGateo = new System.Windows.Forms.Button();
+            this.lvGateo = new System.Windows.Forms.ListView();
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnAddGateo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gbPatientDetails.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnMain.SuspendLayout();
             this.grPatients.SuspendLayout();
+            this.pnTest.SuspendLayout();
+            this.grGateo.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -155,6 +170,20 @@
             this.grMenu.TabIndex = 7;
             this.grMenu.TabStop = false;
             this.grMenu.Text = "Menu";
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.Location = new System.Drawing.Point(33, 218);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(147, 38);
+            this.btnChangePass.TabIndex = 12;
+            this.btnChangePass.Text = "Change password";
+            this.btnChangePass.UseVisualStyleBackColor = false;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnUserManagement
             // 
@@ -318,6 +347,7 @@
             // 
             // gbPatientDetails
             // 
+            this.gbPatientDetails.Controls.Add(this.button1);
             this.gbPatientDetails.Controls.Add(this.btnExit);
             this.gbPatientDetails.Controls.Add(this.btnMinimize);
             this.gbPatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,26 +359,15 @@
             this.gbPatientDetails.TabStop = false;
             this.gbPatientDetails.Text = "Patient Details";
             // 
-            // panel3
+            // button1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
-            this.panel3.Controls.Add(this.grPatients);
-            this.panel3.Location = new System.Drawing.Point(297, 220);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(897, 480);
-            this.panel3.TabIndex = 13;
-            // 
-            // grPatients
-            // 
-            this.grPatients.Controls.Add(this.lvPatients);
-            this.grPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grPatients.ForeColor = System.Drawing.Color.White;
-            this.grPatients.Location = new System.Drawing.Point(16, 15);
-            this.grPatients.Name = "grPatients";
-            this.grPatients.Size = new System.Drawing.Size(868, 452);
-            this.grPatients.TabIndex = 0;
-            this.grPatients.TabStop = false;
-            this.grPatients.Text = "My Patients";
+            this.button1.Location = new System.Drawing.Point(153, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExit
             // 
@@ -376,19 +395,41 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // btnChangePass
+            // pnMain
             // 
-            this.btnChangePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePass.ForeColor = System.Drawing.Color.White;
-            this.btnChangePass.Location = new System.Drawing.Point(33, 218);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(147, 38);
-            this.btnChangePass.TabIndex = 12;
-            this.btnChangePass.Text = "Change password";
-            this.btnChangePass.UseVisualStyleBackColor = false;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            this.pnMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            this.pnMain.Controls.Add(this.grPatients);
+            this.pnMain.Location = new System.Drawing.Point(297, 220);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(897, 480);
+            this.pnMain.TabIndex = 13;
+            // 
+            // grPatients
+            // 
+            this.grPatients.Controls.Add(this.btnViewGateo);
+            this.grPatients.Controls.Add(this.lvPatients);
+            this.grPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grPatients.ForeColor = System.Drawing.Color.White;
+            this.grPatients.Location = new System.Drawing.Point(16, 15);
+            this.grPatients.Name = "grPatients";
+            this.grPatients.Size = new System.Drawing.Size(868, 452);
+            this.grPatients.TabIndex = 0;
+            this.grPatients.TabStop = false;
+            this.grPatients.Text = "My Patients";
+            // 
+            // btnViewGateo
+            // 
+            this.btnViewGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnViewGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewGateo.ForeColor = System.Drawing.Color.White;
+            this.btnViewGateo.Location = new System.Drawing.Point(715, 408);
+            this.btnViewGateo.Name = "btnViewGateo";
+            this.btnViewGateo.Size = new System.Drawing.Size(147, 38);
+            this.btnViewGateo.TabIndex = 13;
+            this.btnViewGateo.Text = "View GATE-O";
+            this.btnViewGateo.UseVisualStyleBackColor = false;
+            this.btnViewGateo.Click += new System.EventHandler(this.btnViewGateo_Click);
             // 
             // lvPatients
             // 
@@ -404,11 +445,12 @@
             this.lvPatients.Location = new System.Drawing.Point(6, 42);
             this.lvPatients.MultiSelect = false;
             this.lvPatients.Name = "lvPatients";
-            this.lvPatients.Size = new System.Drawing.Size(856, 404);
+            this.lvPatients.Size = new System.Drawing.Size(856, 360);
             this.lvPatients.TabIndex = 3;
             this.lvPatients.TileSize = new System.Drawing.Size(188, 30);
             this.lvPatients.UseCompatibleStateImageBehavior = false;
             this.lvPatients.View = System.Windows.Forms.View.Details;
+            this.lvPatients.DoubleClick += new System.EventHandler(this.btnViewGateo_Click);
             // 
             // columnHeader1
             // 
@@ -425,13 +467,118 @@
             this.columnHeader4.Text = "Admission date";
             this.columnHeader4.Width = 151;
             // 
+            // pnTest
+            // 
+            this.pnTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            this.pnTest.Controls.Add(this.grGateo);
+            this.pnTest.Location = new System.Drawing.Point(297, 722);
+            this.pnTest.Name = "pnTest";
+            this.pnTest.Size = new System.Drawing.Size(897, 480);
+            this.pnTest.TabIndex = 14;
+            // 
+            // grGateo
+            // 
+            this.grGateo.Controls.Add(this.btnBackGateo);
+            this.grGateo.Controls.Add(this.lvGateo);
+            this.grGateo.Controls.Add(this.btnAddGateo);
+            this.grGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grGateo.ForeColor = System.Drawing.Color.White;
+            this.grGateo.Location = new System.Drawing.Point(16, 16);
+            this.grGateo.Name = "grGateo";
+            this.grGateo.Size = new System.Drawing.Size(868, 452);
+            this.grGateo.TabIndex = 0;
+            this.grGateo.TabStop = false;
+            this.grGateo.Text = "GATE-O";
+            // 
+            // btnBackGateo
+            // 
+            this.btnBackGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnBackGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackGateo.ForeColor = System.Drawing.Color.White;
+            this.btnBackGateo.Location = new System.Drawing.Point(562, 408);
+            this.btnBackGateo.Name = "btnBackGateo";
+            this.btnBackGateo.Size = new System.Drawing.Size(147, 38);
+            this.btnBackGateo.TabIndex = 15;
+            this.btnBackGateo.Text = "Back";
+            this.btnBackGateo.UseVisualStyleBackColor = false;
+            this.btnBackGateo.Click += new System.EventHandler(this.btnBackGateo_Click);
+            // 
+            // lvGateo
+            // 
+            this.lvGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(175)))), ((int)(((byte)(197)))));
+            this.lvGateo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Date,
+            this.columnHeader2,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lvGateo.ForeColor = System.Drawing.Color.White;
+            this.lvGateo.FullRowSelect = true;
+            this.lvGateo.GridLines = true;
+            this.lvGateo.HideSelection = false;
+            this.lvGateo.Location = new System.Drawing.Point(6, 44);
+            this.lvGateo.MultiSelect = false;
+            this.lvGateo.Name = "lvGateo";
+            this.lvGateo.Size = new System.Drawing.Size(856, 360);
+            this.lvGateo.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.lvGateo.TabIndex = 4;
+            this.lvGateo.TileSize = new System.Drawing.Size(188, 30);
+            this.lvGateo.UseCompatibleStateImageBehavior = false;
+            this.lvGateo.View = System.Windows.Forms.View.Details;
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            this.Date.Width = 93;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Gandeste";
+            this.columnHeader2.Width = 145;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Analize";
+            this.columnHeader5.Width = 155;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tratament";
+            this.columnHeader6.Width = 143;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Evolutie";
+            this.columnHeader7.Width = 152;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Observatii";
+            this.columnHeader8.Width = 151;
+            // 
+            // btnAddGateo
+            // 
+            this.btnAddGateo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnAddGateo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGateo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGateo.ForeColor = System.Drawing.Color.White;
+            this.btnAddGateo.Location = new System.Drawing.Point(715, 408);
+            this.btnAddGateo.Name = "btnAddGateo";
+            this.btnAddGateo.Size = new System.Drawing.Size(147, 38);
+            this.btnAddGateo.TabIndex = 14;
+            this.btnAddGateo.Text = "Add GATE-O";
+            this.btnAddGateo.UseVisualStyleBackColor = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(237)))));
-            this.ClientSize = new System.Drawing.Size(1206, 712);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1206, 1223);
+            this.Controls.Add(this.pnTest);
+            this.Controls.Add(this.pnMain);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -448,8 +595,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.gbPatientDetails.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnMain.ResumeLayout(false);
             this.grPatients.ResumeLayout(false);
+            this.pnTest.ResumeLayout(false);
+            this.grGateo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,13 +631,26 @@
         private System.Windows.Forms.Button btnListPatients;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox gbPatientDetails;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnMain;
         private System.Windows.Forms.GroupBox grPatients;
         private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.ListView lvPatients;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel pnTest;
+        private System.Windows.Forms.GroupBox grGateo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView lvGateo;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button btnViewGateo;
+        private System.Windows.Forms.ColumnHeader Date;
+        private System.Windows.Forms.Button btnBackGateo;
+        private System.Windows.Forms.Button btnAddGateo;
     }
 }
 

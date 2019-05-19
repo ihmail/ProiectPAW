@@ -229,5 +229,29 @@ namespace ProiectPAW
             conn.Close();
         }
 
+        internal static List<Gateo> getGateo(int hosp_id)
+        {
+            string getGateoComm = "select * from gateo where id_hosp=" + hosp_id + ";";
+            List<Gateo> gateoList = new List<Gateo>();
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(getGateoComm, conn);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            try
+            {
+                while (reader.Read())
+                {
+                    gateoList.Add(new Gateo(reader.GetInt32(0), reader.GetDateTime(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7)));
+                }
+            }
+            finally
+            {
+                reader.Close();
+            }
+            conn.Close();
+            return gateoList;
+
+        }
+
     }
 }

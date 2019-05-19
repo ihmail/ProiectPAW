@@ -66,6 +66,7 @@ namespace ProiectPAW
                 UserChangePassword firstTime = new UserChangePassword(currentUser, "This is your first time logging in\nPlease change your password", 1);
                 firstTime.ShowDialog();
             }
+            this.Size = new Size(1206, 712);
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -93,11 +94,73 @@ namespace ProiectPAW
                 listViewItem.SubItems.Add(patient.hospDate.ToString("dd/MM/yyyy"));
                 
 
-                listViewItem.Tag = patient;
+                listViewItem.Tag = patient.hosp_id;
                 lvPatients.Items.Add(listViewItem);
 
             }
             SetHeight(lvPatients, 50);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnMain.Visible = false;
+            pnTest.Visible = true;
+            grGateo.Text = "GATE-O";
+            List<Gateo> gateos = dbQuery.getGateo(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
+            foreach (Gateo gateo in gateos)
+            {
+                var listViewItem = new ListViewItem(gateo.gateo_date.ToString("dd/MM/yyyy\nhh:mm"));
+                listViewItem.SubItems.Add(gateo.gandeste);
+                listViewItem.SubItems.Add(gateo.analize);
+                listViewItem.SubItems.Add(gateo.tratament);
+                listViewItem.SubItems.Add(gateo.evolutie);
+                listViewItem.SubItems.Add(gateo.observatii);
+
+
+                listViewItem.Tag = gateo.id_gateo;
+                lvGateo.Items.Add(listViewItem);
+
+            }
+            SetHeight(lvGateo, 200);
+        }
+
+        private void btnViewGateo_Click(object sender, EventArgs e)
+        {
+            
+            if(lvPatients.SelectedItems.Count != 0)
+            {
+                lvGateo.Items.Clear();
+                pnMain.Visible = false;
+                pnTest.Visible = true;
+                pnTest.Location = new Point(297, 220);
+                List<Gateo> gateos = dbQuery.getGateo(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
+                foreach (Gateo gateo in gateos)
+                {
+                    var listViewItem = new ListViewItem(gateo.gateo_date.ToString("dd/MM/yyyy\nhh:mm"));
+                    listViewItem.SubItems.Add(gateo.gandeste);
+                    listViewItem.SubItems.Add(gateo.analize);
+                    listViewItem.SubItems.Add(gateo.tratament);
+                    listViewItem.SubItems.Add(gateo.evolutie);
+                    listViewItem.SubItems.Add(gateo.observatii);
+
+
+                    listViewItem.Tag = gateo.id_gateo;
+                    lvGateo.Items.Add(listViewItem);
+
+                }
+                SetHeight(lvGateo, 200);
+            }
+            else
+            {
+                MessageBox.Show("Please select a patient first", "Warning");
+            }
+           
+        }
+
+        private void btnBackGateo_Click(object sender, EventArgs e)
+        {
+            pnMain.Visible = true;
+            pnTest.Visible = false;
         }
     }
 }
