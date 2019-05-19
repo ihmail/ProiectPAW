@@ -72,7 +72,7 @@ namespace ProiectPAW
                 {
                     //this is where the magic has to happen
                     dbQuery.addUser(txtUser.Text.ToLower(), ti.ToTitleCase(txtFirstName.Text.ToLower()), ti.ToTitleCase(txtLastName.Text.ToLower()), ctxtSpec.Text, ctxtTitle.Text, ctxtType.Text);
-                    MessageBox.Show("The following user has been added:\n\nUsername: "+txtUser.Text.ToLower()+"\nFirst Name: "+ ti.ToTitleCase(txtFirstName.Text.ToLower()) + "\nLast Name: " + ti.ToTitleCase(txtLastName.Text.ToLower()) + "\nSpecialization: "+ ctxtSpec.Text + "\nJob title: "+ ctxtTitle.Text +"\nUser Type: "+ ctxtType.Text, "Add user\n\nDefault password is changeme - please advise user to change!");
+                    MessageBox.Show("The following user has been added:\n\nUsername: "+txtUser.Text.ToLower()+"\nFirst Name: "+ ti.ToTitleCase(txtFirstName.Text.ToLower()) + "\nLast Name: " + ti.ToTitleCase(txtLastName.Text.ToLower()) + "\nSpecialization: "+ ctxtSpec.Text + "\nJob title: "+ ctxtTitle.Text +"\nUser Type: "+ ctxtType.Text+"\n\nDefault password is changeme - please advise user to change!","Add user");
                 }
                 else
                 {

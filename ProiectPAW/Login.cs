@@ -17,7 +17,7 @@ namespace ProiectPAW
         public Login()
         {
             InitializeComponent();
-            btnExit.Select();
+            btnLogin.Select();
         }
 
         private void txtUser_Enter(object sender, EventArgs e)
@@ -87,14 +87,6 @@ namespace ProiectPAW
             }
         }
 
-        private void Login_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                btnLogin.PerformClick();
-            }
-        }
-
         private void btnReqAccess_MouseEnter(object sender, EventArgs e)
         {
             btnReqAccess.ForeColor = Color.FromArgb(51, 107, 135);
@@ -134,5 +126,6 @@ namespace ProiectPAW
                 e.Handled = true;
             }
         }
+
     }
 }
