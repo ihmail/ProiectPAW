@@ -138,7 +138,7 @@ namespace ProiectPAW
             List<MyPatientsList> patientsView = new List<MyPatientsList>();
             MySqlConnection conn = new MySqlConnection(connString());
             conn.Open();
-            string load = "select p.cnp, concat(p.first_name, ' ', p.last_name), h.id_hosp, h.hosp_reason, h.hosp_date from patients p, users d, hospitalizations h where h.id_patient=p.cnp and h.id_doctor=d.id and h.id_doctor="+user_id+" order by h.hosp_date;";
+            string load = "select p.cnp, concat(p.first_name, ' ', p.last_name), h.id_hosp, h.hosp_reason, h.hosp_date from patients p, users d, hospitalizations h where h.id_patient=p.cnp and h.id_doctor=d.id and h.id_doctor="+user_id+" and open=1 order by h.hosp_date;";
             MySqlCommand command = new MySqlCommand(load, conn);
             MySqlDataReader reader = command.ExecuteReader();
             try
@@ -296,6 +296,40 @@ namespace ProiectPAW
             command.Parameters.AddWithValue("trat", _trat);
             command.Parameters.AddWithValue("evol", _evol);
             command.Parameters.AddWithValue("obs", _obs);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        internal static List<string> getPatientDetails(int _hosp_id)
+        {
+            List<string> pDetails = new List<string>();
+            MySqlConnection conn = new MySqlConnection(connString());
+            string commandGetDetails = "select p.cnp, concat(p.first_name, ' ', p.last_name), birth_date, sex, APP, APF, AHC from patients p join hospitalizations h where h.id_patient=p.cnp and h.id_hosp="+_hosp_id+";";
+            MySqlCommand command = new MySqlCommand(commandGetDetails, conn);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                pDetails.Add(reader.GetString(0));
+                pDetails.Add(reader.GetString(1));
+                pDetails.Add(reader.GetDateTime(2).ToString("dd/MM/yyyy"));
+                pDetails.Add(reader.GetString(3));
+                pDetails.Add(reader.GetString(4));
+                pDetails.Add(reader.GetString(5));
+                pDetails.Add(reader.GetString(6));
+            }
+            reader.Close();
+            conn.Close();
+            return pDetails;
+        }
+
+        internal static void dischargePatient(int id_hosp, string dischargeReason)
+        {
+            string discharge = "update hospitalizations set discharge_diag=@reason, discharge_date='"+DateTime.Now.ToString("yyyy-MM-dd") +"', open=0 where id_hosp ="+id_hosp+";";
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(discharge, conn);
+            command.Parameters.AddWithValue("reason", dischargeReason);
             conn.Open();
             command.ExecuteNonQuery();
             conn.Close();

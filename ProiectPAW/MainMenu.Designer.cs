@@ -55,8 +55,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbPatientDetails = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
             this.pnMain = new System.Windows.Forms.Panel();
             this.grPatients = new System.Windows.Forms.GroupBox();
             this.btnViewGateo = new System.Windows.Forms.Button();
@@ -76,6 +74,29 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAddGateo = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalPatients = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalG = new System.Windows.Forms.Label();
+            this.lblTotalGateo = new System.Windows.Forms.Label();
+            this.lblPDCnp = new System.Windows.Forms.Label();
+            this.txtCnp = new System.Windows.Forms.TextBox();
+            this.lblPName = new System.Windows.Forms.Label();
+            this.txtPName = new System.Windows.Forms.TextBox();
+            this.txtPGender = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPBirthdate = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblPAPP = new System.Windows.Forms.Label();
+            this.lblPAPF = new System.Windows.Forms.Label();
+            this.lblPAHC = new System.Windows.Forms.Label();
+            this.btnViewPatientDetails = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnDischarge = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -291,7 +312,7 @@
             // lblPopSpec
             // 
             this.lblPopSpec.ForeColor = System.Drawing.Color.White;
-            this.lblPopSpec.Location = new System.Drawing.Point(97, 63);
+            this.lblPopSpec.Location = new System.Drawing.Point(97, 65);
             this.lblPopSpec.Name = "lblPopSpec";
             this.lblPopSpec.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPopSpec.Size = new System.Drawing.Size(120, 13);
@@ -320,7 +341,7 @@
             // 
             this.lblSpecialization.AutoSize = true;
             this.lblSpecialization.ForeColor = System.Drawing.Color.White;
-            this.lblSpecialization.Location = new System.Drawing.Point(6, 63);
+            this.lblSpecialization.Location = new System.Drawing.Point(6, 65);
             this.lblSpecialization.Name = "lblSpecialization";
             this.lblSpecialization.Size = new System.Drawing.Size(90, 13);
             this.lblSpecialization.TabIndex = 1;
@@ -347,6 +368,21 @@
             // 
             // gbPatientDetails
             // 
+            this.gbPatientDetails.Controls.Add(this.btnViewPatientDetails);
+            this.gbPatientDetails.Controls.Add(this.lblPAHC);
+            this.gbPatientDetails.Controls.Add(this.lblPAPF);
+            this.gbPatientDetails.Controls.Add(this.lblPAPP);
+            this.gbPatientDetails.Controls.Add(this.label6);
+            this.gbPatientDetails.Controls.Add(this.label5);
+            this.gbPatientDetails.Controls.Add(this.label4);
+            this.gbPatientDetails.Controls.Add(this.txtPBirthdate);
+            this.gbPatientDetails.Controls.Add(this.label3);
+            this.gbPatientDetails.Controls.Add(this.txtPGender);
+            this.gbPatientDetails.Controls.Add(this.label2);
+            this.gbPatientDetails.Controls.Add(this.txtPName);
+            this.gbPatientDetails.Controls.Add(this.lblPName);
+            this.gbPatientDetails.Controls.Add(this.txtCnp);
+            this.gbPatientDetails.Controls.Add(this.lblPDCnp);
             this.gbPatientDetails.Controls.Add(this.btnExit);
             this.gbPatientDetails.Controls.Add(this.btnMinimize);
             this.gbPatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,32 +393,6 @@
             this.gbPatientDetails.TabIndex = 10;
             this.gbPatientDetails.TabStop = false;
             this.gbPatientDetails.Text = "Patient Details";
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::ProiectPAW.Properties.Resources.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(809, 17);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(53, 49);
-            this.btnExit.TabIndex = 8;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(749, 17);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(53, 49);
-            this.btnMinimize.TabIndex = 9;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // pnMain
             // 
@@ -395,6 +405,9 @@
             // 
             // grPatients
             // 
+            this.grPatients.Controls.Add(this.btnDischarge);
+            this.grPatients.Controls.Add(this.lblTotalPatients);
+            this.grPatients.Controls.Add(this.lblTotal);
             this.grPatients.Controls.Add(this.btnViewGateo);
             this.grPatients.Controls.Add(this.lvPatients);
             this.grPatients.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -440,6 +453,7 @@
             this.lvPatients.TileSize = new System.Drawing.Size(188, 30);
             this.lvPatients.UseCompatibleStateImageBehavior = false;
             this.lvPatients.View = System.Windows.Forms.View.Details;
+            this.lvPatients.SelectedIndexChanged += new System.EventHandler(this.lvPatients_SelectedIndexChanged);
             this.lvPatients.Click += new System.EventHandler(this.lvPatients_Click);
             this.lvPatients.DoubleClick += new System.EventHandler(this.btnViewGateo_Click);
             // 
@@ -469,6 +483,9 @@
             // 
             // grGateo
             // 
+            this.grGateo.Controls.Add(this.lblTotalGateo);
+            this.grGateo.Controls.Add(this.label1);
+            this.grGateo.Controls.Add(this.lblTotalG);
             this.grGateo.Controls.Add(this.btnEditGateo);
             this.grGateo.Controls.Add(this.btnBackGateo);
             this.grGateo.Controls.Add(this.lvGateo);
@@ -578,6 +595,230 @@
             this.btnAddGateo.UseVisualStyleBackColor = false;
             this.btnAddGateo.Click += new System.EventHandler(this.btnAddGateo_Click);
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(7, 421);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(93, 13);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Total patients: ";
+            // 
+            // lblTotalPatients
+            // 
+            this.lblTotalPatients.AutoSize = true;
+            this.lblTotalPatients.Location = new System.Drawing.Point(106, 421);
+            this.lblTotalPatients.Name = "lblTotalPatients";
+            this.lblTotalPatients.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalPatients.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(105, 421);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 18;
+            // 
+            // lblTotalG
+            // 
+            this.lblTotalG.AutoSize = true;
+            this.lblTotalG.Location = new System.Drawing.Point(6, 421);
+            this.lblTotalG.Name = "lblTotalG";
+            this.lblTotalG.Size = new System.Drawing.Size(94, 13);
+            this.lblTotalG.TabIndex = 17;
+            this.lblTotalG.Text = "Total GATE-O: ";
+            // 
+            // lblTotalGateo
+            // 
+            this.lblTotalGateo.AutoSize = true;
+            this.lblTotalGateo.Location = new System.Drawing.Point(96, 421);
+            this.lblTotalGateo.Name = "lblTotalGateo";
+            this.lblTotalGateo.Size = new System.Drawing.Size(0, 13);
+            this.lblTotalGateo.TabIndex = 19;
+            // 
+            // lblPDCnp
+            // 
+            this.lblPDCnp.AutoSize = true;
+            this.lblPDCnp.ForeColor = System.Drawing.Color.White;
+            this.lblPDCnp.Location = new System.Drawing.Point(7, 33);
+            this.lblPDCnp.Name = "lblPDCnp";
+            this.lblPDCnp.Size = new System.Drawing.Size(40, 13);
+            this.lblPDCnp.TabIndex = 6;
+            this.lblPDCnp.Text = "CNP: ";
+            // 
+            // txtCnp
+            // 
+            this.txtCnp.Enabled = false;
+            this.txtCnp.Location = new System.Drawing.Point(53, 30);
+            this.txtCnp.Name = "txtCnp";
+            this.txtCnp.Size = new System.Drawing.Size(101, 20);
+            this.txtCnp.TabIndex = 10;
+            // 
+            // lblPName
+            // 
+            this.lblPName.AutoSize = true;
+            this.lblPName.ForeColor = System.Drawing.Color.White;
+            this.lblPName.Location = new System.Drawing.Point(160, 33);
+            this.lblPName.Name = "lblPName";
+            this.lblPName.Size = new System.Drawing.Size(47, 13);
+            this.lblPName.TabIndex = 11;
+            this.lblPName.Text = "Name: ";
+            // 
+            // txtPName
+            // 
+            this.txtPName.Enabled = false;
+            this.txtPName.Location = new System.Drawing.Point(213, 30);
+            this.txtPName.Name = "txtPName";
+            this.txtPName.Size = new System.Drawing.Size(135, 20);
+            this.txtPName.TabIndex = 12;
+            // 
+            // txtPGender
+            // 
+            this.txtPGender.Enabled = false;
+            this.txtPGender.Location = new System.Drawing.Point(407, 30);
+            this.txtPGender.Name = "txtPGender";
+            this.txtPGender.Size = new System.Drawing.Size(69, 20);
+            this.txtPGender.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(354, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Gender: ";
+            // 
+            // txtPBirthdate
+            // 
+            this.txtPBirthdate.Enabled = false;
+            this.txtPBirthdate.Location = new System.Drawing.Point(556, 30);
+            this.txtPBirthdate.Name = "txtPBirthdate";
+            this.txtPBirthdate.Size = new System.Drawing.Size(101, 20);
+            this.txtPBirthdate.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(480, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Birth date: ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(7, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "APP: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(7, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "APF: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(7, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "AHC: ";
+            // 
+            // lblPAPP
+            // 
+            this.lblPAPP.ForeColor = System.Drawing.Color.White;
+            this.lblPAPP.Location = new System.Drawing.Point(52, 65);
+            this.lblPAPP.Name = "lblPAPP";
+            this.lblPAPP.Size = new System.Drawing.Size(605, 13);
+            this.lblPAPP.TabIndex = 20;
+            // 
+            // lblPAPF
+            // 
+            this.lblPAPF.ForeColor = System.Drawing.Color.White;
+            this.lblPAPF.Location = new System.Drawing.Point(52, 96);
+            this.lblPAPF.Name = "lblPAPF";
+            this.lblPAPF.Size = new System.Drawing.Size(605, 13);
+            this.lblPAPF.TabIndex = 21;
+            // 
+            // lblPAHC
+            // 
+            this.lblPAHC.ForeColor = System.Drawing.Color.White;
+            this.lblPAHC.Location = new System.Drawing.Point(53, 123);
+            this.lblPAHC.Name = "lblPAHC";
+            this.lblPAHC.Size = new System.Drawing.Size(605, 13);
+            this.lblPAHC.TabIndex = 22;
+            // 
+            // btnViewPatientDetails
+            // 
+            this.btnViewPatientDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnViewPatientDetails.Enabled = false;
+            this.btnViewPatientDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewPatientDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewPatientDetails.ForeColor = System.Drawing.Color.White;
+            this.btnViewPatientDetails.Location = new System.Drawing.Point(715, 101);
+            this.btnViewPatientDetails.Name = "btnViewPatientDetails";
+            this.btnViewPatientDetails.Size = new System.Drawing.Size(147, 38);
+            this.btnViewPatientDetails.TabIndex = 16;
+            this.btnViewPatientDetails.Text = "View details";
+            this.btnViewPatientDetails.UseVisualStyleBackColor = false;
+            this.btnViewPatientDetails.Click += new System.EventHandler(this.btnViewPatientDetails_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::ProiectPAW.Properties.Resources.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(809, 17);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(53, 49);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(749, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(53, 49);
+            this.btnMinimize.TabIndex = 9;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnDischarge
+            // 
+            this.btnDischarge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnDischarge.Enabled = false;
+            this.btnDischarge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDischarge.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDischarge.ForeColor = System.Drawing.Color.White;
+            this.btnDischarge.Location = new System.Drawing.Point(562, 408);
+            this.btnDischarge.Name = "btnDischarge";
+            this.btnDischarge.Size = new System.Drawing.Size(147, 38);
+            this.btnDischarge.TabIndex = 16;
+            this.btnDischarge.Text = "Discharge patient";
+            this.btnDischarge.UseVisualStyleBackColor = false;
+            this.btnDischarge.Click += new System.EventHandler(this.btnDischarge_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,10 +843,13 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.gbPatientDetails.ResumeLayout(false);
+            this.gbPatientDetails.PerformLayout();
             this.pnMain.ResumeLayout(false);
             this.grPatients.ResumeLayout(false);
+            this.grPatients.PerformLayout();
             this.pnTest.ResumeLayout(false);
             this.grGateo.ResumeLayout(false);
+            this.grGateo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,6 +902,27 @@
         private System.Windows.Forms.Button btnBackGateo;
         private System.Windows.Forms.Button btnAddGateo;
         private System.Windows.Forms.Button btnEditGateo;
+        private System.Windows.Forms.Label lblTotalPatients;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotalG;
+        private System.Windows.Forms.Label lblTotalGateo;
+        private System.Windows.Forms.Button btnViewPatientDetails;
+        private System.Windows.Forms.Label lblPAHC;
+        private System.Windows.Forms.Label lblPAPF;
+        private System.Windows.Forms.Label lblPAPP;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPBirthdate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPGender;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPName;
+        private System.Windows.Forms.Label lblPName;
+        private System.Windows.Forms.TextBox txtCnp;
+        private System.Windows.Forms.Label lblPDCnp;
+        private System.Windows.Forms.Button btnDischarge;
     }
 }
 

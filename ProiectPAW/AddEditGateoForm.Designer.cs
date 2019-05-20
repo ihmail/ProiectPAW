@@ -189,9 +189,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.label6.Location = new System.Drawing.Point(34, 280);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Observatii";
+            this.label6.Text = "Evolutie";
             // 
             // label7
             // 

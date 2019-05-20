@@ -13,6 +13,7 @@ namespace ProiectPAW
     public partial class MainMenu : Form
     {
         User currentUser;
+        List<string> patientDetail;
 
         public MainMenu(User user)
         {
@@ -102,6 +103,7 @@ namespace ProiectPAW
 
             }
             SetHeight(lvPatients, 50);
+            lblTotalPatients.Text = patients.Count.ToString();
         }
 
         private void loadGateo()
@@ -128,6 +130,7 @@ namespace ProiectPAW
 
                 }
                 SetHeight(lvGateo, 200);
+                lblTotalGateo.Text = gateos.Count.ToString();
             }
             else
             {
@@ -167,6 +170,7 @@ namespace ProiectPAW
         private void lvPatients_Click(object sender, EventArgs e)
         {
             btnViewGateo.Enabled = true;
+            btnDischarge.Enabled = true;
         }
 
         private void btnAddGateo_Click(object sender, EventArgs e)
@@ -174,6 +178,37 @@ namespace ProiectPAW
             AddEditGateoForm addGateo = new AddEditGateoForm(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
             addGateo.ShowDialog();
             loadGateo();
+        }
+
+        private void lvPatients_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                btnViewPatientDetails.Enabled = true;
+                patientDetail = dbQuery.getPatientDetails(Convert.ToInt32(lvPatients.SelectedItems[0].Tag));
+                txtCnp.Text = patientDetail[0];
+                txtPName.Text = patientDetail[1];
+                txtPBirthdate.Text = patientDetail[2];
+                txtPGender.Text = patientDetail[3];
+                lblPAPP.Text = patientDetail[4];
+                lblPAPF.Text = patientDetail[5];
+                lblPAHC.Text = patientDetail[6];
+        }
+
+        private void btnViewPatientDetails_Click(object sender, EventArgs e)
+        {
+            ViewPatientDetailsForm viewDetails = new ViewPatientDetailsForm(patientDetail);
+            viewDetails.ShowDialog();
+        }
+
+        private void btnDischarge_Click(object sender, EventArgs e)
+        {
+            var selected = lvPatients.SelectedItems[0];
+            DischargePatientForm discharge = new DischargePatientForm(patientDetail, Convert.ToInt32(lvPatients.SelectedItems[0].Tag), selected.SubItems[2].Text, selected.SubItems[1].Text);
+            discharge.ShowDialog();
+            showMyPatients();
+            lblPAHC.Text = lblPAPF.Text = lblPAPP.Text = txtCnp.Text = txtPBirthdate.Text = txtPGender.Text = txtPName.Text = String.Empty;
+            btnDischarge.Enabled = false;
+            btnViewGateo.Enabled = false;
+            btnViewPatientDetails.Enabled = false;
         }
     }
 }
