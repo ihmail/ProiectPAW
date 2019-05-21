@@ -31,10 +31,24 @@ namespace ProiectPAW
                 MessageBox.Show("CNP does not appear to be valid", "Error");
                 return;
             }
+            if (dbQuery.checkPatient(Convert.ToInt64(txtCnp.Text)))
+            {
+                ViewPatientDetailsForm view = new ViewPatientDetailsForm(dbQuery.getPatientDetails(Convert.ToInt64(txtCnp.Text)), user);
+                this.Close();
+                view.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Patient does not exist in database", "No result");
+            }
+        }
 
-            ViewPatientDetailsForm view = new ViewPatientDetailsForm(dbQuery.getPatientDetails(Convert.ToInt64(txtCnp.Text)), user);
-            this.Close();
-            view.ShowDialog();
+        private void txtCnp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

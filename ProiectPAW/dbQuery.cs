@@ -364,7 +364,7 @@ namespace ProiectPAW
         internal static bool checkPatient(long cnp)
         {
             MySqlConnection conn = new MySqlConnection(connString());
-            string check = "select * from patients where id_patient=@cnp";
+            string check = "select * from patients where cnp=@cnp";
             MySqlCommand command = new MySqlCommand(check, conn);
             command.Parameters.AddWithValue("cnp", cnp);
             conn.Open();

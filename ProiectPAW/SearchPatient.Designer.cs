@@ -43,6 +43,7 @@
             this.txtCnp.Name = "txtCnp";
             this.txtCnp.Size = new System.Drawing.Size(101, 20);
             this.txtCnp.TabIndex = 20;
+            this.txtCnp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnp_KeyPress);
             // 
             // lblPDCnp
             // 
