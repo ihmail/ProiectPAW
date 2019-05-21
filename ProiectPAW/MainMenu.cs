@@ -185,16 +185,32 @@ namespace ProiectPAW
 
         private void lvPatients_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedPatient= (MyPatientsList)lvPatients.SelectedItems[0].Tag;
-            btnViewPatientDetails.Enabled = true;
-            patientDetail = dbQuery.getPatientDetails(selectedPatient.cnp);
-            txtCnp.Text = patientDetail[0];
-            txtPName.Text = patientDetail[1];
-            txtPBirthdate.Text = patientDetail[2];
-            txtPGender.Text = patientDetail[3];
-            lblPAPP.Text = patientDetail[4];
-            lblPAPF.Text = patientDetail[5];
-            lblPAHC.Text = patientDetail[6];
+            if (lvPatients.SelectedItems.Count > 0)
+            {
+                var selectedPatient = (MyPatientsList)lvPatients.SelectedItems[0].Tag;
+                btnViewPatientDetails.Enabled = true;
+                patientDetail = dbQuery.getPatientDetails(selectedPatient.cnp);
+                txtCnp.Text = patientDetail[0];
+                txtPName.Text = patientDetail[1];
+                txtPBirthdate.Text = patientDetail[2];
+                txtPGender.Text = patientDetail[3];
+                lblPAPP.Text = patientDetail[4];
+                lblPAPF.Text = patientDetail[5];
+                lblPAHC.Text = patientDetail[6];
+            }
+            else
+            {
+                btnViewGateo.Enabled = false;
+                btnDischarge.Enabled = false;
+                btnViewPatientDetails.Enabled = false;
+                txtCnp.Text = String.Empty;
+                txtPName.Text = String.Empty;
+                txtPBirthdate.Text = String.Empty;
+                txtPGender.Text = String.Empty;
+                lblPAPP.Text = String.Empty;
+                lblPAPF.Text = String.Empty;
+                lblPAHC.Text = String.Empty;
+            }
         }
 
         private void btnViewPatientDetails_Click(object sender, EventArgs e)
@@ -232,6 +248,7 @@ namespace ProiectPAW
             SearchPatient searchP = new SearchPatient(currentUser.id);
             searchP.ShowDialog();
             showMyPatients();
+            lvPatients_SelectedIndexChanged(sender, e);
         }
     }
 }

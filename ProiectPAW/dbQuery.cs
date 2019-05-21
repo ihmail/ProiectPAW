@@ -368,16 +368,21 @@ namespace ProiectPAW
             MySqlCommand command = new MySqlCommand(check, conn);
             command.Parameters.AddWithValue("cnp", cnp);
             conn.Open();
-            int result = Convert.ToInt32(command.ExecuteScalar());
+            bool result = Convert.ToBoolean(command.ExecuteScalar());
             conn.Close();
-            if (result == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return result;
+        }
+
+        internal static bool checkHosp(long cnp)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string check = "select * from hospitalizations where id_patient=@cnp;";
+            MySqlCommand command = new MySqlCommand(check, conn);
+            command.Parameters.AddWithValue("cnp", cnp);
+            conn.Open();
+            bool result = Convert.ToBoolean(command.ExecuteScalar());
+            conn.Close();
+            return result;
         }
     }
 }

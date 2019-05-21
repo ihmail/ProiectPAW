@@ -80,6 +80,11 @@ namespace ProiectPAW
 
         private void btnNewHosp_Click(object sender, EventArgs e)
         {
+            if (dbQuery.checkHosp(Convert.ToInt64(txtCnp.Text)))
+            {
+                MessageBox.Show("Patient currently hospitalized\nCannot create new hospitalization","Warning");
+                return;
+            }
             NewHospForm newHosp = new NewHospForm(patientDetail, docID);
             this.Hide();
             newHosp.ShowDialog();
