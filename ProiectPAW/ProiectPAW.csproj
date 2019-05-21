@@ -122,6 +122,18 @@
     </Compile>
     <Compile Include="Gateo.cs" />
     <Compile Include="MyPatientsList.cs" />
+    <Compile Include="NewHospForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewHospForm.Designer.cs">
+      <DependentUpon>NewHospForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPatient.Designer.cs">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewHospForm.resx">
+      <DependentUpon>NewHospForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchPatient.resx">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserChangePassword.resx">
       <DependentUpon>UserChangePassword.cs</DependentUpon>

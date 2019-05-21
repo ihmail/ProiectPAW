@@ -11,11 +11,11 @@ namespace ProiectPAW
     public static class dbQuery
     {
 
-        public static string hostname = Properties.Settings.Default.dbHostname;
-        public static string port = Properties.Settings.Default.dbPort;
-        public static string database = Properties.Settings.Default.dbDatabase;
-        public static string username = Properties.Settings.Default.dbUsername;
-        public static string password = Properties.Settings.Default.dbPassword;
+        internal static string hostname = Properties.Settings.Default.dbHostname;
+        internal static string port = Properties.Settings.Default.dbPort;
+        internal static string database = Properties.Settings.Default.dbDatabase;
+        internal static string username = Properties.Settings.Default.dbUsername;
+        internal static string password = Properties.Settings.Default.dbPassword;
 
         private static string connString()
         {
@@ -27,7 +27,7 @@ namespace ProiectPAW
             return "Server=" + hostname + ";Port=" + port + ";Database=" + database + ";Uid=" + username + ";password=" + password + ";";
         }
 
-        public static string checkDb()
+        internal static string checkDb()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace ProiectPAW
             }
         }
 
-        public static bool Login(string user, string pass)
+        internal static bool Login(string user, string pass)
         {
             bool isValid = false;
             MySqlConnection conn = new MySqlConnection(connString());
@@ -82,7 +82,7 @@ namespace ProiectPAW
             return isValid;
         }
 
-        public static User loggedIn(string user)
+        internal static User loggedIn(string user)
         {
             MySqlConnection conn = new MySqlConnection(connString());
             MySqlCommand command = new MySqlCommand("select id, username, password, first_name, last_name, specialization, job_title, type from users where username=@user;", conn);
@@ -110,7 +110,7 @@ namespace ProiectPAW
             return current;
         }
 
-        public static List<User> loadUsers()
+        internal static List<User> loadUsers()
         {
             List<User> _users = new List<User>();
             MySqlConnection conn = new MySqlConnection(connString());
@@ -133,7 +133,7 @@ namespace ProiectPAW
             return _users;
         }
 
-        public static List<MyPatientsList> loadMyPatientsView(int user_id)
+        internal static List<MyPatientsList> loadMyPatientsView(int user_id)
         {
             List<MyPatientsList> patientsView = new List<MyPatientsList>();
             MySqlConnection conn = new MySqlConnection(connString());
@@ -156,7 +156,7 @@ namespace ProiectPAW
             return patientsView;
         }
 
-        public static void deleteUser(User user)
+        internal static void deleteUser(User user)
         {
             MySqlConnection conn = new MySqlConnection(connString());
             conn.Open();
@@ -165,8 +165,8 @@ namespace ProiectPAW
             command.ExecuteNonQuery();
             conn.Clone();
         }
-        
-        public static void editUser(User user)
+
+        internal static void editUser(User user)
         {
             string editUser = "update users set first_name=@firstName, last_name=@lastName, specialization=@spec, job_title=@title, type=@newType where id=" + user.id;
             MySqlConnection conn = new MySqlConnection(connString());
@@ -181,7 +181,7 @@ namespace ProiectPAW
             conn.Close();
         }
 
-        public static void changePass(User user, string password)
+        internal static void changePass(User user, string password)
         {
             MySqlConnection conn = new MySqlConnection(connString());
             string newPass = "update users set password=@pass where id=" + user.id;
@@ -192,7 +192,7 @@ namespace ProiectPAW
             conn.Close();
         }
 
-        public static bool checkDupe(string username)
+        internal static bool checkDupe(string username)
         {
             MySqlConnection conn = new MySqlConnection(connString());
             string check = "select * from users where username=@user";
@@ -209,10 +209,9 @@ namespace ProiectPAW
             {
                 return true;
             }
-
         }
 
-        public static void addUser(string username, string firstName, string lastName, string spec, string title, string type)
+        internal static void addUser(string username, string firstName, string lastName, string spec, string title, string type)
         {
             string pass = "changeme";
             MySqlConnection conn = new MySqlConnection(connString());
@@ -301,11 +300,11 @@ namespace ProiectPAW
             conn.Close();
         }
 
-        internal static List<string> getPatientDetails(int _hosp_id)
+        internal static List<string> getPatientDetails(long cnp)
         {
             List<string> pDetails = new List<string>();
             MySqlConnection conn = new MySqlConnection(connString());
-            string commandGetDetails = "select p.cnp, concat(p.first_name, ' ', p.last_name), birth_date, sex, APP, APF, AHC from patients p join hospitalizations h where h.id_patient=p.cnp and h.id_hosp="+_hosp_id+";";
+            string commandGetDetails = "select cnp, concat(first_name, ' ', last_name), birth_date, sex, app, apf, ahc from patients where cnp="+cnp+";";
             MySqlCommand command = new MySqlCommand(commandGetDetails, conn);
             conn.Open();
             MySqlDataReader reader = command.ExecuteReader();
@@ -333,6 +332,52 @@ namespace ProiectPAW
             conn.Open();
             command.ExecuteNonQuery();
             conn.Close();
+        }
+
+        internal static void editPatient(long cnp, string app, string apf, string ahc)
+        {
+            string edit = "update patients set app=@app, apf=@apf, ahc=@ahc where cnp="+cnp+";";
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(edit, conn);
+            command.Parameters.AddWithValue("app", app);
+            command.Parameters.AddWithValue("apf", apf);
+            command.Parameters.AddWithValue("ahc", ahc);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        internal static void newHosp(long cnp, int doctor, string reason)
+        {
+            string add = "insert into hospitalizations(id_patient, id_doctor, hosp_reason, hosp_date, open) values(@cnp, @currentUser, @reason, '"+DateTime.Now.ToString("yyyy-MM-dd") + "', 1);";
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(add, conn);
+            command.Parameters.AddWithValue("cnp", cnp);
+            command.Parameters.AddWithValue("currentUser", doctor);
+            command.Parameters.AddWithValue("reason", reason);
+
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        internal static bool checkPatient(long cnp)
+        {
+            MySqlConnection conn = new MySqlConnection(connString());
+            string check = "select * from patients where id_patient=@cnp";
+            MySqlCommand command = new MySqlCommand(check, conn);
+            command.Parameters.AddWithValue("cnp", cnp);
+            conn.Open();
+            int result = Convert.ToInt32(command.ExecuteScalar());
+            conn.Close();
+            if (result == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

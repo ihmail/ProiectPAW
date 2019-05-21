@@ -43,6 +43,9 @@
             this.txtAPF = new System.Windows.Forms.TextBox();
             this.txtAHC = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btneEdit = new System.Windows.Forms.Button();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.btnNewHosp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPBirthdate
@@ -136,9 +139,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.label6.Location = new System.Drawing.Point(24, 272);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(190, 13);
             this.label6.TabIndex = 27;
-            this.label6.Text = "AHC: ";
+            this.label6.Text = "Antecedente heredo-colaterale: ";
             // 
             // label5
             // 
@@ -147,9 +150,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.label5.Location = new System.Drawing.Point(24, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(203, 13);
             this.label5.TabIndex = 26;
-            this.label5.Text = "APF: ";
+            this.label5.Text = "Antecedente personale fiziologice:";
             // 
             // label4
             // 
@@ -158,9 +161,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.label4.Location = new System.Drawing.Point(24, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size(205, 13);
             this.label4.TabIndex = 25;
-            this.label4.Text = "APP: ";
+            this.label4.Text = "Antecedente personale patologice:";
             // 
             // txtAPP
             // 
@@ -201,7 +204,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(526, 384);
+            this.btnBack.Location = new System.Drawing.Point(27, 385);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(147, 38);
             this.btnBack.TabIndex = 31;
@@ -209,12 +212,57 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btneEdit
+            // 
+            this.btneEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btneEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneEdit.ForeColor = System.Drawing.Color.White;
+            this.btneEdit.Location = new System.Drawing.Point(526, 385);
+            this.btneEdit.Name = "btneEdit";
+            this.btneEdit.Size = new System.Drawing.Size(147, 38);
+            this.btneEdit.TabIndex = 32;
+            this.btneEdit.Text = "Edit";
+            this.btneEdit.UseVisualStyleBackColor = false;
+            this.btneEdit.Click += new System.EventHandler(this.btneEdit_Click);
+            // 
+            // btnApply
+            // 
+            this.btnApply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.ForeColor = System.Drawing.Color.White;
+            this.btnApply.Location = new System.Drawing.Point(373, 385);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(147, 38);
+            this.btnApply.TabIndex = 33;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // btnNewHosp
+            // 
+            this.btnNewHosp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnNewHosp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewHosp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewHosp.ForeColor = System.Drawing.Color.White;
+            this.btnNewHosp.Location = new System.Drawing.Point(220, 385);
+            this.btnNewHosp.Name = "btnNewHosp";
+            this.btnNewHosp.Size = new System.Drawing.Size(147, 38);
+            this.btnNewHosp.TabIndex = 34;
+            this.btnNewHosp.Text = "New Hospitalization";
+            this.btnNewHosp.UseVisualStyleBackColor = false;
+            this.btnNewHosp.Click += new System.EventHandler(this.btnNewHosp_Click);
+            // 
             // ViewPatientDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(703, 435);
+            this.Controls.Add(this.btnNewHosp);
+            this.Controls.Add(this.btnApply);
+            this.Controls.Add(this.btneEdit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtAHC);
             this.Controls.Add(this.txtAPF);
@@ -257,5 +305,8 @@
         private System.Windows.Forms.TextBox txtAPF;
         private System.Windows.Forms.TextBox txtAHC;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btneEdit;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnNewHosp;
     }
 }

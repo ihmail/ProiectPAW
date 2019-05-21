@@ -121,6 +121,8 @@ namespace ProiectPAW
                 try
                 {
                     dbQuery.addGateo(hosp_id, rtxtGandeste.Text, rtxtAnalize.Text, rtxtTratament.Text, rtxtEvolutie.Text, rtxtObservatii.Text);
+                    MessageBox.Show("GATE-O has been saved!", "Success");
+                    this.Close();
                 }
                 catch(Exception ex)
                 {

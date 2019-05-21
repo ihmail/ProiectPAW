@@ -13,10 +13,26 @@ namespace ProiectPAW
     public partial class ViewPatientDetailsForm : Form
     {
         List<string> patientDetail;
-        public ViewPatientDetailsForm(List<string> details)
+        int docID;
+        public ViewPatientDetailsForm(List<string> details) 
         {
             InitializeComponent();
             patientDetail = details;
+            btnApply.Visible = false;
+            btnNewHosp.Visible = false;
+            
+        }
+
+        public ViewPatientDetailsForm(List<string> details, int user_id) 
+        {
+            InitializeComponent();
+            patientDetail = details;
+            btnApply.Visible = false;
+            btneEdit.Visible = false;
+            btnNewHosp.Location = new Point(526, 385);
+            btnNewHosp.Visible = true;
+            docID = user_id;
+
         }
 
         private void ViewPatientDetailsForm_Load(object sender, EventArgs e)
@@ -33,6 +49,41 @@ namespace ProiectPAW
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btneEdit_Click(object sender, EventArgs e)
+        {
+            btneEdit.Visible = false;
+            btnApply.Location = new Point(526, 385);
+            btnApply.Visible = true;
+            txtAPP.Enabled = true;
+            txtAPF.Enabled = true;
+            txtAHC.Enabled = true;
+
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to save the changes made?","Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    dbQuery.editPatient(Convert.ToInt64(txtCnp.Text), txtAPP.Text, txtAPF.Text, txtAHC.Text);
+                    MessageBox.Show("Changes have been saved", "Success");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(),"Failure");
+                }
+            }
+        }
+
+        private void btnNewHosp_Click(object sender, EventArgs e)
+        {
+            NewHospForm newHosp = new NewHospForm(patientDetail, docID);
+            this.Hide();
+            newHosp.ShowDialog();
+            this.Show();
         }
     }
 }
