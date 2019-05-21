@@ -190,6 +190,7 @@
             this.btnAddPatient.TabIndex = 9;
             this.btnAddPatient.Text = "Add patient to database";
             this.btnAddPatient.UseVisualStyleBackColor = false;
+            this.btnAddPatient.Click += new System.EventHandler(this.btnAddPatient_Click);
             // 
             // btnSearchPatients
             // 

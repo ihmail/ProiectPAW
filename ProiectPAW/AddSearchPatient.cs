@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace ProiectPAW
 {
-    public partial class SearchPatient : Form
+    public partial class AddSearchPatient : Form
     {
         int user;
-        public SearchPatient(int userID)
+        public AddSearchPatient()
         {
             InitializeComponent();
+            btnSearch.Visible = false;
+            btnAdd.Location = new Point(41, 74);
+
+        }
+
+        public AddSearchPatient(int userID)
+        {
+            InitializeComponent();
+            btnAdd.Visible = false;
             user = userID;
         }
 
@@ -49,6 +58,23 @@ namespace ProiectPAW
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtCnp.Text.Count() != 13)
+            {
+                MessageBox.Show("CNP does not appear to be valid", "Error");
+                return;
+            }
+            if (dbQuery.checkPatient(Convert.ToInt64(txtCnp.Text)))
+            {
+                MessageBox.Show("Patient already in database", "Error");
+                return;
+            }
+            this.Close();
+            AddPatientForm add = new AddPatientForm(txtCnp.Text);
+            add.ShowDialog();
         }
     }
 }

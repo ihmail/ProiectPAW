@@ -1,6 +1,6 @@
 ﻿namespace ProiectPAW
 {
-    partial class SearchPatient
+    partial class AddSearchPatient
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.lblPDCnp = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCnp
@@ -42,7 +43,7 @@
             this.txtCnp.MaxLength = 13;
             this.txtCnp.Name = "txtCnp";
             this.txtCnp.Size = new System.Drawing.Size(101, 20);
-            this.txtCnp.TabIndex = 20;
+            this.txtCnp.TabIndex = 0;
             this.txtCnp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCnp_KeyPress);
             // 
             // lblPDCnp
@@ -65,7 +66,7 @@
             this.btnSearch.Location = new System.Drawing.Point(41, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(147, 38);
-            this.btnSearch.TabIndex = 32;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -79,23 +80,38 @@
             this.button1.Location = new System.Drawing.Point(41, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 38);
-            this.button1.TabIndex = 33;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // SearchPatient
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(87, 102);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(147, 38);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // AddSearchPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(232, 192);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtCnp);
             this.Controls.Add(this.lblPDCnp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SearchPatient";
+            this.Name = "AddSearchPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchPatient";
             this.ResumeLayout(false);
@@ -109,5 +125,6 @@
         private System.Windows.Forms.Label lblPDCnp;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

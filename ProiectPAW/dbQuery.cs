@@ -384,5 +384,22 @@ namespace ProiectPAW
             conn.Close();
             return result;
         }
+
+        internal static void addPatient(long cnp, string first_name, string last_name, string birth_date, string sex, string APP, string APF, string AHC)
+        {
+            string addPatient = "insert into patients values(@cnp, @first_name, @last_name, @birth_date, @sex, @APP, @APF, @AHC);";
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(addPatient, conn);
+            command.Parameters.AddWithValue("cnp", cnp);
+            command.Parameters.AddWithValue("first_name", first_name);
+            command.Parameters.AddWithValue("last_name", last_name);
+            command.Parameters.AddWithValue("birth_date", birth_date);
+            command.Parameters.AddWithValue("sex", sex);
+            command.Parameters.AddWithValue("APP", APP);
+            command.Parameters.AddWithValue("APF", APF);
+            command.Parameters.AddWithValue("AHC", AHC);
+            conn.Open();
+            command.ExecuteNonQuery();
+        }
     }
 }

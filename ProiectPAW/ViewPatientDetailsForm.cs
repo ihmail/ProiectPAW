@@ -20,7 +20,8 @@ namespace ProiectPAW
             patientDetail = details;
             btnApply.Visible = false;
             btnNewHosp.Visible = false;
-            
+
+
         }
 
         public ViewPatientDetailsForm(List<string> details, int user_id) 
@@ -32,6 +33,20 @@ namespace ProiectPAW
             btnNewHosp.Location = new Point(526, 385);
             btnNewHosp.Visible = true;
             docID = user_id;
+
+        }
+
+        public ViewPatientDetailsForm(string cnp)
+        {
+            InitializeComponent();
+            btneEdit.Visible = false;
+            btnApply.Visible = false;
+            btnNewHosp.Visible = false;
+            txtPName.Enabled = true;
+            txtAPP.Enabled = true;
+            txtAPF.Enabled = true;
+            txtAHC.Enabled = true;
+            txtCnp.Text = cnp;
 
         }
 

@@ -245,10 +245,16 @@ namespace ProiectPAW
 
         private void btnSearchPatients_Click(object sender, EventArgs e)
         {
-            SearchPatient searchP = new SearchPatient(currentUser.id);
+            AddSearchPatient searchP = new AddSearchPatient(currentUser.id);
             searchP.ShowDialog();
             showMyPatients();
             lvPatients_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnAddPatient_Click(object sender, EventArgs e)
+        {
+            AddSearchPatient add = new AddSearchPatient();
+            add.ShowDialog();
         }
     }
 }
