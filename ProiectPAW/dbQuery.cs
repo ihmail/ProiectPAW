@@ -376,7 +376,7 @@ namespace ProiectPAW
         internal static bool checkHosp(long cnp)
         {
             MySqlConnection conn = new MySqlConnection(connString());
-            string check = "select * from hospitalizations where id_patient=@cnp;";
+            string check = "select * from hospitalizations where id_patient=@cnp and open=1;";
             MySqlCommand command = new MySqlCommand(check, conn);
             command.Parameters.AddWithValue("cnp", cnp);
             conn.Open();

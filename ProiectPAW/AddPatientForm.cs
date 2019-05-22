@@ -54,6 +54,10 @@ namespace ProiectPAW
                 {
                     dbQuery.addPatient(Convert.ToInt64(txtCnp.Text), txtFirstName.Text, txtLastName.Text, dtpBirth.Value.ToString("yyyy-MM-dd"), ctxtSex.Text, txtAPP.Text, txtAPF.Text, txtAHC.Text);
                     MessageBox.Show("Patient succesfully added to the dataabse", "Success");
+                    if(MessageBox.Show("Would you like to hospitalize patient now?","New hospitalization", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        //var newHosp = new NewHospForm(MainMenu.currentUser.id);   <-- need to fix this in order to get a new hospitalization
+                    }
                     this.Close();
                 }
                 catch(Exception ex)

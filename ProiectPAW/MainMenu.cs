@@ -12,7 +12,7 @@ namespace ProiectPAW
 {
     public partial class MainMenu : Form
     {
-        User currentUser;
+        internal static User currentUser;
         List<string> patientDetail;
         internal static bool addedPatient = false;
 
