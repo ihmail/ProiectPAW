@@ -401,5 +401,33 @@ namespace ProiectPAW
             conn.Open();
             command.ExecuteNonQuery();
         }
+
+        internal static List<Hospitalization> getHosps(long cnp)
+        {
+            string getHistory = "select id_hosp, id_doctor, hosp_reason, discharge_diag, hosp_date, discharge_date, open from hospitalizations where id_patient=@cnp order by hosp_date;";
+            List<Hospitalization> historyList = new List<Hospitalization>();
+            MySqlConnection conn = new MySqlConnection(connString());
+            MySqlCommand command = new MySqlCommand(getHistory, conn);
+            command.Parameters.AddWithValue("cnp", cnp);
+            conn.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string discharge_date = string.Empty;
+                string status = "Closed";
+                if (!reader.IsDBNull(5))
+                {
+                    discharge_date = reader.GetDateTime(5).ToString("dd/MM/yyyy");
+                }
+                if (reader.GetInt32(6) == 1)
+                {
+                    status = "Open";
+                }
+                historyList.Add(new Hospitalization(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4).ToString("dd/MM/yyyy"), discharge_date, status));
+            }
+            reader.Close();
+            conn.Close();
+            return historyList;
+        }
     }
 }

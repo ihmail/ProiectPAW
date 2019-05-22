@@ -30,6 +30,8 @@ namespace ProiectPAW
             patientDetail = details;
             btnApply.Visible = false;
             btneEdit.Visible = false;
+            btnHistory.Location = new Point(373, 385);
+            btnHistory.Visible = true;
             btnNewHosp.Location = new Point(526, 385);
             btnNewHosp.Visible = true;
             docID = user_id;
@@ -104,6 +106,12 @@ namespace ProiectPAW
             this.Hide();
             newHosp.ShowDialog();
             this.Show();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            ViewPatientHistoryForm history = new ViewPatientHistoryForm(patientDetail);
+            history.ShowDialog();
         }
     }
 }

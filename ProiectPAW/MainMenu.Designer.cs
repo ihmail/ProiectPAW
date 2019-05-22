@@ -412,9 +412,9 @@
             // 
             // txtPBirthdate
             // 
-            this.txtPBirthdate.Enabled = false;
             this.txtPBirthdate.Location = new System.Drawing.Point(556, 30);
             this.txtPBirthdate.Name = "txtPBirthdate";
+            this.txtPBirthdate.ReadOnly = true;
             this.txtPBirthdate.Size = new System.Drawing.Size(101, 20);
             this.txtPBirthdate.TabIndex = 16;
             // 
@@ -430,9 +430,9 @@
             // 
             // txtPGender
             // 
-            this.txtPGender.Enabled = false;
             this.txtPGender.Location = new System.Drawing.Point(407, 30);
             this.txtPGender.Name = "txtPGender";
+            this.txtPGender.ReadOnly = true;
             this.txtPGender.Size = new System.Drawing.Size(69, 20);
             this.txtPGender.TabIndex = 14;
             // 
@@ -448,9 +448,9 @@
             // 
             // txtPName
             // 
-            this.txtPName.Enabled = false;
             this.txtPName.Location = new System.Drawing.Point(213, 30);
             this.txtPName.Name = "txtPName";
+            this.txtPName.ReadOnly = true;
             this.txtPName.Size = new System.Drawing.Size(135, 20);
             this.txtPName.TabIndex = 12;
             // 
@@ -466,9 +466,9 @@
             // 
             // txtCnp
             // 
-            this.txtCnp.Enabled = false;
             this.txtCnp.Location = new System.Drawing.Point(53, 30);
             this.txtCnp.Name = "txtCnp";
+            this.txtCnp.ReadOnly = true;
             this.txtCnp.Size = new System.Drawing.Size(101, 20);
             this.txtCnp.TabIndex = 10;
             // 

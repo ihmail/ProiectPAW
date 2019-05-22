@@ -46,6 +46,7 @@
             this.btneEdit = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnNewHosp = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPBirthdate
@@ -254,12 +255,28 @@
             this.btnNewHosp.UseVisualStyleBackColor = false;
             this.btnNewHosp.Click += new System.EventHandler(this.btnNewHosp_Click);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Location = new System.Drawing.Point(125, 315);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(147, 38);
+            this.btnHistory.TabIndex = 35;
+            this.btnHistory.Text = "View History";
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Visible = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
             // ViewPatientDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(703, 435);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnNewHosp);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btneEdit);
@@ -308,5 +325,6 @@
         private System.Windows.Forms.Button btneEdit;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnNewHosp;
+        private System.Windows.Forms.Button btnHistory;
     }
 }

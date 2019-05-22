@@ -14,6 +14,7 @@ namespace ProiectPAW
     {
         User currentUser;
         List<string> patientDetail;
+        internal static bool addedPatient = false;
 
         public MainMenu(User user)
         {
@@ -31,7 +32,7 @@ namespace ProiectPAW
         }
 
 
-        private void SetHeight(ListView listView, int height)
+        internal static void SetHeight(ListView listView, int height)
         {
             ImageList imgList = new ImageList();
             imgList.ImageSize = new Size(1, height);
@@ -247,8 +248,12 @@ namespace ProiectPAW
         {
             AddSearchPatient searchP = new AddSearchPatient(currentUser.id);
             searchP.ShowDialog();
-            showMyPatients();
-            lvPatients_SelectedIndexChanged(sender, e);
+            if (addedPatient)
+            {
+                showMyPatients();
+                lvPatients_SelectedIndexChanged(sender, e);
+            }
+            
         }
 
         private void btnAddPatient_Click(object sender, EventArgs e)

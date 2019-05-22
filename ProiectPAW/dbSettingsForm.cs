@@ -12,9 +12,7 @@ namespace ProiectPAW
 {
     public partial class dbSettingsForm : Form
     {
-        private bool isValid = false;
-
-
+        
         public dbSettingsForm()
         {
             InitializeComponent();
@@ -44,7 +42,6 @@ namespace ProiectPAW
             else
             {
                 MessageBox.Show("Connection successful", "Admin");
-                isValid = true;
             }
         }
 
@@ -63,7 +60,7 @@ namespace ProiectPAW
                 Properties.Settings.Default.dbUsername = txtUsername.Text;
                 Properties.Settings.Default.dbPassword = txtPassword.Text;
                 Properties.Settings.Default.Save();
-                MessageBox.Show("Database settings saved, application will now exit.\nPlease start GETA again for changes to take effect.","Admin");
+                MessageBox.Show("Database settings saved, application will now exit.\nPlease start GATE-O again for changes to take effect.","Admin");
                 Application.Exit();
             }
         }

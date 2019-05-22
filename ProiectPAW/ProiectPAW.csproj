@@ -127,6 +127,7 @@
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Gateo.cs" />
+    <Compile Include="Hospitalization.cs" />
     <Compile Include="MyPatientsList.cs" />
     <Compile Include="NewHospForm.cs">
       <SubType>Form</SubType>
@@ -173,11 +174,23 @@
     <Compile Include="UserManagementForm.Designer.cs">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewHistoryGateoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewHistoryGateoForm.Designer.cs">
+      <DependentUpon>ViewHistoryGateoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewPatientDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewPatientDetailsForm.Designer.cs">
       <DependentUpon>ViewPatientDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPatientHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPatientHistoryForm.Designer.cs">
+      <DependentUpon>ViewPatientHistoryForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
@@ -231,8 +244,14 @@
     <EmbeddedResource Include="UserManagementForm.resx">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewHistoryGateoForm.resx">
+      <DependentUpon>ViewHistoryGateoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewPatientDetailsForm.resx">
       <DependentUpon>ViewPatientDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPatientHistoryForm.resx">
+      <DependentUpon>ViewPatientHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ProiectPAW_TemporaryKey.pfx" />

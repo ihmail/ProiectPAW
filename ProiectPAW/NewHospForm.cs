@@ -45,6 +45,7 @@ namespace ProiectPAW
             {
                 dbQuery.newHosp(Convert.ToInt64(txtCnp.Text), doctorID ,txtReason.Text);
                 MessageBox.Show("New hospitalization added", "Success");
+                MainMenu.addedPatient = true;
             }
             catch(Exception ex)
             {
