@@ -240,6 +240,7 @@ namespace ProiectPAW
             {
                 while (reader.Read())
                 {
+                    
                     gateoList.Add(new Gateo(reader.GetInt32(0), reader.GetDateTime(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7)));
                 }
             }
@@ -414,6 +415,7 @@ namespace ProiectPAW
             while (reader.Read())
             {
                 string discharge_date = string.Empty;
+                string diagnosis = string.Empty;
                 string status = "Closed";
                 if (!reader.IsDBNull(5))
                 {
@@ -423,7 +425,11 @@ namespace ProiectPAW
                 {
                     status = "Open";
                 }
-                historyList.Add(new Hospitalization(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4).ToString("dd/MM/yyyy"), discharge_date, status));
+                if (!reader.IsDBNull(3))
+                {
+                    diagnosis = reader.GetString(3);
+                }
+                historyList.Add(new Hospitalization(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), diagnosis, reader.GetDateTime(4).ToString("dd/MM/yyyy"), discharge_date, status));
             }
             reader.Close();
             conn.Close();

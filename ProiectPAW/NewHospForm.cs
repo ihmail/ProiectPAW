@@ -46,11 +46,17 @@ namespace ProiectPAW
                 dbQuery.newHosp(Convert.ToInt64(txtCnp.Text), doctorID ,txtReason.Text);
                 MessageBox.Show("New hospitalization added", "Success");
                 MainMenu.addedPatient = true;
+                this.Close();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error:\n\n"+ex.ToString(), "Failure");
             }
+        }
+
+        private void NewHospForm_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.FromArgb(51, 107, 135), 4), this.DisplayRectangle);
         }
     }
 }

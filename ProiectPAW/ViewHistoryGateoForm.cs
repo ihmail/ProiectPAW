@@ -53,5 +53,10 @@ namespace ProiectPAW
         {
             this.Close();
         }
+
+        private void ViewHistoryGateoForm_Paint_1(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.FromArgb(51, 107, 135), 4), this.DisplayRectangle);
+        }
     }
 }

@@ -118,6 +118,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewHistoryGateoForm";
             this.Load += new System.EventHandler(this.ViewHistoryGateoForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewHistoryGateoForm_Paint_1);
             this.ResumeLayout(false);
 
         }

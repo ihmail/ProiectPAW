@@ -252,6 +252,7 @@ namespace ProiectPAW
             {
                 showMyPatients();
                 lvPatients_SelectedIndexChanged(sender, e);
+                addedPatient = false;
             }
             
         }
@@ -260,6 +261,14 @@ namespace ProiectPAW
         {
             AddSearchPatient add = new AddSearchPatient();
             add.ShowDialog();
+            if (addedPatient)
+            {
+                showMyPatients();
+                lvPatients_SelectedIndexChanged(sender, e);
+                addedPatient = false;
+
+            }
         }
+
     }
 }

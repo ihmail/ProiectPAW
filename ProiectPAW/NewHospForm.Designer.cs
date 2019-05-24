@@ -198,6 +198,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewHospForm";
             this.Load += new System.EventHandler(this.NewHospForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.NewHospForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

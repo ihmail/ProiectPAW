@@ -54,6 +54,7 @@ namespace ProiectPAW
                 {
                     dbQuery.dischargePatient(hosp_id, txtDischarge.Text);
                     MessageBox.Show("Patient has been discharged", "Success");
+                    this.Close();
                 }
                 catch(Exception ex)
                 {
